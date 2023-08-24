@@ -269,7 +269,7 @@ if (emailVerificationSection) {
 const loginEmail = document.getElementById("login_email")
 const loginPassword = document.getElementById("login_password")
 
-const loginUser = async (request, response) => {
+const loginUser = async () => {
     
     const response = await fetch(url + "/users/login", {
         method: "POST",
