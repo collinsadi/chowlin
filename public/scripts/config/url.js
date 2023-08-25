@@ -1,6 +1,7 @@
 // alert("connected")
 const cookie = null
-const url = "http://localhost:5000"
+const url = "https://chowlinapi.onrender.com"
+// const url = "http://localhost:5000"
 
 
 
