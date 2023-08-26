@@ -18,7 +18,7 @@
                 <div class="cart-counter">
                     <p>10</p>
                 </div>
-                <button><i class="fa-solid fa-cart-shopping"></i></button>
+                <button id="cart-icon" ><i  class="fa-solid fa-cart-shopping"></i></button>
             </div>
 
             <div class="user-button">
@@ -80,6 +80,9 @@
                 </div>
 
                 <button id="login_btn" >Sign In</button>
+              <p id="loginerror" style="text-align: center;font-size: 15px;"></p>
+
+                <h4 id="forgotpassword">forgot Password? <span id="resetpassword">Reset Password</span></h4>
                 <h4>New to Chowlin? <span id="newhere">Sign Up</span></h4>
 
                 </form>
@@ -259,5 +262,99 @@
 
 
 
+
+</div>
+
+
+<div id="cart-modal" class="cart-modal">
+
+
+    <div class="cart-modal-inner">
+
+        <div class="close-cart-modal">
+            <h3>Cart</h3>
+            <p>&times;</p>
+        </div>
+
+
+        <div class="cart-container">
+
+            <div class="empty-cart">
+
+
+                <img src="/images/empty.png" alt="">
+
+                <h3>Your Cart is Empty</h3>
+                <h3>Add Items to Pack to get Started</h3>
+
+
+            </div>
+
+
+         
+            <!-- <div class="cart-item">
+
+                <div class="cart-item-inner">
+
+                    <div class="cart-item-left">
+
+                        <div class="item-image">
+                            <img src="/images/food.png" alt="">
+                        </div>
+
+                        <div class="item-description">
+
+                            <h3>Fried Singapore egg noodles</h3>
+                            <p>₦ 2200.0</p>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="cart-item-right">
+
+                        <button><i class="fa-solid fa-plus"></i></button>
+                        <button>1</button>
+                        <button><i class="fa-solid fa-minus"></i></button>
+
+                    </div>
+
+                    <div class="remove-button">
+                        <button>Remove</button>
+                    </div>
+
+                </div>
+
+            </div> -->
+
+
+
+        </div>
+
+
+        <!-- <div class="cart-summary">
+
+            <div class="cart-summary-inner">
+
+
+                <div class="sub-total">
+
+                    <p>Total(NGN)</p>
+                    <h3>₦ 20,000</h3>
+
+                </div>
+                <div class="confirm-button">
+                    <button>Confirm Order</button>
+                </div>
+
+            </div>
+
+        </div> -->
+
+
+
+    </div>
 
 </div>

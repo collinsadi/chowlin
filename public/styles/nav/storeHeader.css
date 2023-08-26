@@ -100,6 +100,7 @@ header{
     /* overflow-y: scroll; */
     overflow: hidden;
     display: none;
+    z-index: 5;
 }
 
 .signin-modal-inner{
@@ -224,6 +225,10 @@ header{
     margin-bottom: 10px;
     font-size: 20px;
 }
+.modal-form button:disabled{
+
+    opacity: 0.8;
+}
 
 .form-container{
 
@@ -297,6 +302,249 @@ header{
 
 
 
+/* Cart Modal */
+
+.cart-modal{
+
+    width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.288);
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        /* overflow-y: scroll; */
+        overflow: hidden;
+        display: none;
+        z-index: 10;
+        
+
+}
+
+.cart-modal-inner{
+
+        width: 500px;
+        padding: 30px;
+        background-color: white;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        /* overflow-y: scroll; */
+    
+        overflow-y: auto;
+        max-height: 100%;
+        max-width: 100%;
+        height: 100%;
+
+}
+
+.close-cart-modal{
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid rgb(233, 232, 232);
+    padding-bottom: 10px;
+}
+.close-cart-modal h3{
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+
+.close-cart-modal p{
+
+    font-size: 20px;
+        padding: 15px;
+        border-radius: 50%;
+        border: 2px solid rgba(211, 211, 211, 0.76);
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-weight: bold;
+}
+
+
+.empty-cart{
+
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 20px;
+    opacity: 0.6;
+
+}
+
+.empty-cart h3{
+
+    font-size: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+.cart-item{
+
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-bottom: 2px solid var(--primary-color);
+    margin-top: 10px;
+}
+
+.cart-item-inner{
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    
+}
+
+.cart-item-left{
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.cart-item-right{
+
+    width: 100% ;
+    justify-content: flex-start;
+   
+  
+}
+
+.cart-item-right button{
+
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    padding: 10px;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    cursor: pointer;
+}
+
+.item-image{
+
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    
+}
+
+.item-image img{
+
+    max-width: 100%;
+    border: 1px solid var(--primary-color);
+   
+   
+}
+
+
+.item-description h3{
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.item-description p {
+
+    font-weight: bold;
+    margin-top: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    color: var(--primary-color);
+}
+
+.remove-button{
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+
+.remove-button button{
+
+    background-color: rgb(230, 18, 18);
+    border: 0;
+    outline: 0;
+    padding: 5px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.cart-summary{
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.cart-summary-inner{
+
+    width: 100%;
+    padding: 10px;
+}
+
+
+.sub-total{
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.confirm-button{
+
+    width: 100%;
+    margin-top: 20px;
+
+}
+.confirm-button button{
+
+    padding: 10px;
+    background-color: var(--primary-color);
+    font-size: 20px;
+    color: white;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 15px;
+    
+}
+
+
+
+
 
 
 
@@ -311,4 +559,18 @@ header{
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
     }
+        #signup-section::-webkit-scrollbar{
+
+            display: none;
+        }
+        .cart-modal-inner{
+
+            border-radius: 0;
+        }
+        
+                .cart-modal-inner::-webkit-scrollbar{
+
+                    display: none;
+                }
+    
 }

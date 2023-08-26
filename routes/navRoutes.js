@@ -10,6 +10,10 @@ router.get("/store", (request, response) => {
     
     response.render("nav/store")
 })
+router.get("/store/vendors/:uniqueurl", (request, response) => {
+    
+    response.render("nav/vendor")
+})
 router.get("/about", (request, response) => {
     
     response.render("nav/about")

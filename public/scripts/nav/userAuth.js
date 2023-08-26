@@ -51,6 +51,8 @@ if (wasHere) {
 
 const signUpUser = async () => {
 
+    signupButton.disabled = true
+
     const response = await fetch(url + "/users/signup", {
         method: "POST",
         headers: {
@@ -70,6 +72,9 @@ const signUpUser = async () => {
         signUpError.innerHTML = data.message
         signUpError.style.color = "red"
 
+    signupButton.disabled = false
+
+
         return false
     }
 
@@ -79,6 +84,7 @@ const signUpUser = async () => {
         signUpError.style.color = "green"
         localStorage.setItem("email",data.email)
 
+        signupButton.disabled = false
        
         return true
     }
@@ -143,6 +149,8 @@ const verifyEmail = async () => {
 
     verifyButton.innerHTML = "verifying.."
 
+    verifyButton.disabled = true
+
     const response = await fetch(url + "/users/signup/verify", {
         method: "POST",
         headers: {
@@ -184,6 +192,7 @@ const verifyEmail = async () => {
 
     }
 
+    verifyButton.disabled = false
     
 
 }
@@ -192,8 +201,15 @@ const verifyEmail = async () => {
 
 if (emailVerificationSection) {
     
-    firstBox.addEventListener("keyup", () => {
+    firstBox.addEventListener("keyup", (e) => {
         console.log(firstBox.value)
+
+        if (e.key === "Backspace" || e.code === "Backspace") {
+
+            firstBox.value=""
+            
+            return
+        }
 
         if (isNaN(firstBox.value)) {
             
@@ -204,11 +220,29 @@ if (emailVerificationSection) {
         } else {
             verificationError.innerHTML=""
         }
+
+        if (firstBox.value.length > 1) {
+            
+            const numbers = firstBox.value.split("")
+            firstBox.value = numbers[0]
+            secondBox.value = numbers[1]
+            thirdBox.value = numbers[2]
+            fourthBox.value = numbers[3]
+        }
+        
         secondBox.focus()
         
     })
 
-    secondBox.addEventListener("keyup", () => {
+    secondBox.addEventListener("keyup", (e) => {
+
+        if (e.key === "Backspace" || e.code === "Backspace") {
+            
+            secondBox.value=""
+            firstBox.focus()
+
+            return
+        }
 
          if (isNaN(secondBox.value)) {
             
@@ -219,11 +253,28 @@ if (emailVerificationSection) {
         }else {
             verificationError.innerHTML=""
         }
+
+        if (secondBox.value.length > 1) {
+            
+            const numbers = secondBox.value.split("")
+            firstBox.value = numbers[0]
+            secondBox.value = numbers[1]
+            thirdBox.value = numbers[2]
+            fourthBox.value = numbers[3]
+        }
         
         thirdBox.focus()
     })
 
-    thirdBox.addEventListener("keyup", () => {
+    thirdBox.addEventListener("keyup", (e) => {
+
+        if (e.key === "Backspace" || e.code === "Backspace") {
+            
+            thirdBox.value=""
+            secondBox.focus()
+
+            return
+        }
 
          if (isNaN(thirdBox.value)) {
             
@@ -235,10 +286,27 @@ if (emailVerificationSection) {
             verificationError.innerHTML=""
         }
 
+        if (thirdBox.value.length > 1) {
+            
+            const numbers = thirdBox.value.split("")
+            firstBox.value = numbers[0]
+            secondBox.value = numbers[1]
+            thirdBox.value = numbers[2]
+            fourthBox.value = numbers[3]
+        }
+
         fourthBox.focus()
     })
 
-    fourthBox.addEventListener("keyup", () => {
+    fourthBox.addEventListener("keyup", (e) => {
+
+        if (e.key === "Backspace" || e.code === "Backspace") {
+            
+            fourthBox.value=""
+            thirdBox.focus()
+
+            return
+        }
 
          if (isNaN(fourthBox.value)) {
             
@@ -249,12 +317,47 @@ if (emailVerificationSection) {
         }else {
             verificationError.innerHTML=""
         }
+
+        if (fourthBox.value.length > 1) {
+            
+            const numbers = fourthBox.value.split("")
+            firstBox.value = numbers[0]
+            secondBox.value = numbers[1]
+            thirdBox.value = numbers[2]
+            fourthBox.value = numbers[3]
+        }
+
         if (fourthBox.value !== "") {
             
             console.log("Last Number")
             verifyEmail()
         }
     })
+
+    // fourthBox.addEventListener("paste", (e) => {
+    
+    //     const pastedData = e.clipboardData.getData("text")
+
+    //     console.log(pastedData)
+
+    //     if (isNaN(pastedData)) {
+            
+    //         // console.log("NNobe ")
+    //         fourthBox.value = ""
+    //         verificationError.innerHTML = "Enter a Valid Number"
+    //         verificationError.style.color = "red"
+    //     }
+
+    //     if (pastedData.length > 1) {
+            
+    //         const numbers = pastedData.split("")
+    //         console.log(numbers)
+    //         firstBox.value = numbers[0]
+    //         secondBox.value = numbers[1]
+    //         thirdBox.value = numbers[2]
+    //         e.target.value = numbers[3]
+    //     }
+    // })
 
 
     verifyButton.addEventListener("click", () => {
@@ -268,8 +371,14 @@ if (emailVerificationSection) {
 
 const loginEmail = document.getElementById("login_email")
 const loginPassword = document.getElementById("login_password")
+const loginError = document.getElementById("loginerror")
+const forgotPasswordButton = document.getElementById("resetpassword")
+
 
 const loginUser = async () => {
+
+    loginButton.disabled = true
+    loginButton.innerHTML = "Signing in .."
     
     const response = await fetch(url + "/users/login", {
         method: "POST",
@@ -282,4 +391,88 @@ const loginUser = async () => {
         })
     })
 
+    const data = await response.json()
+
+    console.log(data)
+
+    if (data.message === "Please Verify Email") {
+        localStorage.setItem("email", data.email)
+        
+        logInSection.style.display = "none"
+        emailVerificationSection.style.display = "block"
+    }
+
+    if (!data.status) {
+        
+        loginError.innerHTML = data.message
+        loginError.style.color = "red"
+    }
+
+    if (data.status) {
+        loginError.style.color = "green"
+        loginError.innerHTML = data.message
+        setCookie("jwt", data.user.token, 30)
+
+        setTimeout(() => {
+            location.reload()
+        }, 1000);
+    }
+    loginButton.innerHTML = "Sign In"
+
+    loginButton.disabled = false
+
+
+}
+
+if (loginButton) {
+    
+    loginButton.addEventListener("click", () => {
+        loginUser()
+    })
+}
+
+const sendPasswordResetToken = async () => {
+
+    loginButton.disabled = true
+    loginButton.innerHTML = "Signing in .."
+    forgotPasswordButton.disabled = true
+    
+    const response = await fetch(url + "/users/password/forgotten", {
+        method: "POST",
+        headers: {
+            "Content-Type":"application/json"
+        },
+        body: JSON.stringify({
+            email: loginEmail.value
+        })
+    })
+
+    const data = await response.json()
+
+    console.log(data)
+
+    if (!data.status) {
+        
+        loginError.innerHTML = data.message
+        loginError.style.color = "red"
+    }
+
+    if (data.status) {
+        loginError.style.color = "green"
+        loginError.innerHTML = data.message
+    }
+    loginButton.innerHTML = "Sign In"
+
+    loginButton.disabled = false
+    forgotPasswordButton.disabled = false
+
+
+
+}
+
+if (forgotPasswordButton) {
+    
+    forgotPasswordButton.addEventListener("click", () => {
+        sendPasswordResetToken()
+    })
 }

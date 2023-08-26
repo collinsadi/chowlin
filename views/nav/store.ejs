@@ -6,12 +6,59 @@
     <title>Order Food On Campus From Your Favorite Vendors || Store</title>
     <%- include("../partials/universal/styles.ejs") %>
     <link rel="stylesheet" href="styles/nav/storeHeader.css">
+    <link rel="stylesheet" href="styles/nav/store.css">
 </head>
 <body>
     <%- include("../partials/headers/storeHeader.ejs") %>
     
 
+    <section class="restaurant-section">
 
+        <div class="restaurant-section-inner">
+
+            <div class="single-restaurant">
+
+                <div class="restaurant-top">
+
+                    <div class="closed-banner">
+
+                        <p>Vendor Closed</p>
+
+                    </div>
+                    <div class="restaurant-image">
+                        <img src="images/demo.png" alt="">
+                    </div>
+
+                </div>
+                <div class="restaurant-bottom">
+                    <div class="restaurant-name">
+                    <h3> Phoenix Restaurant</h3>
+                    </div>
+                    
+
+                    <div class="timing">
+
+                        <i class="fa-regular fa-clock"></i>
+                        <p>10-15 Mins</p>
+
+                    </div>
+
+                    <div class="buy-button">
+                        <a href="/store/vendors/phoenix-restaturant-hello23"><button>Buy From Phoenix Restaurant</button></a>
+                    </div>
+
+                </div>
+
+            </div>
+       
+          
+        </div>
+
+    </section>
+
+
+
+    <script src="scripts/nav/store.js"></script>
     <script src="scripts/nav/storeHeader.js"></script>
     <%- include("../partials/universal/scripts.ejs") %>
     <script src="scripts/nav/userAuth.js"></script>
