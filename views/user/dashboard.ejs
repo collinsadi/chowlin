@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Food On Campus From Your Favorite Vendors || Dashboard</title>
+    <%- include("../partials/dashboard/styles.ejs") %>
+    <%- include("../partials/universal/styles.ejs") %>
+   
+</head>
+<body>
+   
+    <div class="side-bar">
+
+        <div class="side-bar-inner">
+
+            <div class="side-bar-top">
+
+                <h3>CHOWLIN</h3>
+
+            </div>
+
+            <div class="side-bar-buttons">
+
+                <div class="side-bar-buttons-inner">
+
+                    <div class="single-side-bar-button  active-button">
+                        <i class="fa-solid fa-table-columns"></i>
+                        <a href="/user/dashboard"><button>Dashboard</button></a>
+                    </div>
+
+                    <div class="single-side-bar-button">
+                        <i class="fa-solid fa-cart-flatbed"></i>
+                        <a href="/user/dashboard/orders"><button>Orders</button></a>
+                    </div>
+                    
+                    <div class="single-side-bar-button">
+                        <i class="fa-solid fa-credit-card"></i>
+                        <a href="/user/dashboard/payments"><button>Transactions</button></a>
+                    </div>
+                    
+                    <div class="single-side-bar-button">
+                        <i class="fa-solid fa-wallet"></i>
+                        <a href="/user/dashboard/wallet"><button>Wallet</button></a>
+                    </div>
+
+
+                    <div class="single-side-bar-button">
+                        <i class="fa-solid fa-sliders"></i>
+                        <a href="/user/dashboard/settings"><button>Settings</button></a>
+                    </div>
+
+
+
+
+
+
+
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- mobile Sidebar -->
+
+    <div class="mobile-side-bar">
+
+        <div class="mobile-side-bar-inner">
+
+            <div class="mobile-side-bar-button">
+
+                <div class="button-icon active-mobile-button">
+
+                    <a href="/user/dashboard">
+                    <button><i class="fa-solid fa-table-columns"></i></button></a>
+                
+
+                </div>
+
+            </div>
+            <div class="mobile-side-bar-button">
+
+                <div class="button-icon">
+
+                    <a href="/user/dashboard/orders">
+                    <button><i class="fa-solid fa-cart-flatbed"></i></button></a>
+                
+
+                </div>
+
+            </div>
+            <div class="mobile-side-bar-button">
+
+                <div class="button-icon">
+
+                    <a href="/user/dashboard/payments">
+                    <button><i class="fa-solid fa-credit-card"></i></button></a>
+                
+
+                </div>
+
+            </div>
+            <div class="mobile-side-bar-button">
+
+                <div class="button-icon">
+
+                    <a href="/user/dashboard/wallet">
+                    <button><i class="fa-solid fa-wallet"></i></button></a>
+                
+
+                </div>
+
+            </div>
+            <div class="mobile-side-bar-button">
+
+                <div class="button-icon ">
+
+                    <a href="/user/dashboard/settings">
+                    <button><i class="fa-solid fa-sliders"></i></button></a>
+                
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <main class="main-page">
+
+        <div class="main-page-header">
+
+            <h3>Dashboard</h3>
+
+        </div>
+
+
+        <div class="main-page-inner">
+
+            <h1>Hello World!</h1>
+
+        </div>
+
+
+    </main>
+
+
+
+
+
+    <%- include("../partials/dashboard/scripts.ejs") %>
+</body>
+</html>
