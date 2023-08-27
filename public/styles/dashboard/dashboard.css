@@ -232,6 +232,14 @@
 }
 
 
+@media all and (max-width: 420px) {
+
+.button-icon button{
+
+    font-size: 15px;
+}
+
+}
 @media all and (max-width: 516px) {
     /* your content here */
 
