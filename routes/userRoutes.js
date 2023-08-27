@@ -24,6 +24,14 @@ router.get("/user/dashboard",checkLogin, (request, response) => {
     
     response.render("user/dashboard")
 })
+router.get("/user/dashboard/orders",checkLogin, (request, response) => {
+    
+    response.render("user/orders")
+})
+router.get("/user/dashboard/payments",checkLogin, (request, response) => {
+    
+    response.render("user/transactions")
+})
 
 
 
