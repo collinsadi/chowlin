@@ -1,0 +1,82 @@
+.transactions-array{
+
+        width: 100%;
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 10px;
+}
+
+.single-transaction{
+
+    width: 100%;
+        /* padding: 15px; */
+        background-color: white;
+        border: 1px solid rgb(3, 3, 3);
+        border-radius: 15px;
+        margin-bottom: 15px;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+       height: 150px;
+        max-height: 150px;
+}
+
+.transaction-icon{
+
+    font-size: 30px;
+    width: 50px;
+    
+    color: white;
+    height: 100%;
+    border-top-left-radius: inherit;
+    border-bottom-left-radius: inherit;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.credit{
+
+background-color: var(--primary-color);
+}
+
+.debit{
+
+background-color: rgb(228, 7, 7);
+
+}
+.failed{
+
+background-color: var(--secondary-color);
+
+}
+
+.transaction-details{
+
+    font-family: 'Courier New', Courier, monospace;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 80%;
+ 
+}
+
+.transaction-details p:last-child{
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 5px;
+
+}
+
+.transaction-details p:first-child{
+
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+

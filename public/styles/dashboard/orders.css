@@ -1,0 +1,55 @@
+
+
+.orders-array{
+
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.single-order{
+
+    width: 100%;
+    padding: 15px;
+    background-color: white;
+    border: 1px solid rgb(3, 3, 3);
+    border-radius: 15px;
+    border-left: 8px solid var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.single-order .order-id{
+
+    width: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.single-order p{
+
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 10px;
+}
+
+.single-order p:nth-child(4){
+
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.single-order button{
+
+    width: 200px;
+    padding: 10px;
+    background-color: var(--primary-color);
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 15px;
+    outline: 0;
+    border: 0;
+    color: white;
+}
