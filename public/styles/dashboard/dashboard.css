@@ -193,7 +193,7 @@
 
 .active-mobile{
 
-    width: 25%;
+    width: 35%;
     background-color: var(--primary-color);
     border-radius: 15px;
     display: flex;
@@ -207,6 +207,7 @@
     color: var(--white-text);
 
 }
+
 
 
 
