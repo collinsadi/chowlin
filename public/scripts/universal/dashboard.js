@@ -8,6 +8,11 @@ mobileButtons.forEach(button => {
         
         const span = button.querySelector("span")
 
+        if(span.innerHTML !== "Home"){
+
+            
         span.style.display = "inline-block"
+        }
+
     }
 })

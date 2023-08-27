@@ -167,7 +167,7 @@
 
 .mobile-side-bar-button{
 
-    width: 10%;
+    min-width: 10%;
     color: rgb(214, 214, 214);
     display: flex;
     align-items: center;
@@ -194,7 +194,7 @@
 
 .active-mobile{
 
-    width: 35%;
+    max-width: 35%;
     background-color: var(--primary-color);
     border-radius: 15px;
     display: flex;
@@ -250,7 +250,7 @@
 
 .button-icon button{
 
-    font-size: 15px;
+    font-size: 18px;
 }
 
 }
