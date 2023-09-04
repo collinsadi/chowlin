@@ -94,3 +94,169 @@
     font-size: 20px;
     cursor: pointer;
 }
+
+.card-title{
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+}
+
+.transaction-buttons{
+
+    width: 500px;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.transaction-buttons button{
+
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    padding: 10px;
+    color: white;
+    font-size: 18px;
+    background-color: var(--primary-color);
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.transaction-buttons button:last-child{
+
+    background-color: red;
+
+}
+
+
+.fund-popup{
+
+    width: 1182px;
+    position: fixed;
+    top: 0;
+    left: 200px;
+    max-width: 1182px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.301);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+
+.fund-popup-inner{
+
+    width: 400px;
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 15px;
+
+    
+}
+
+.input-container{
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border: 1px solid rgb(165, 164, 164);
+    padding-left: 15px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+.input-icon{
+
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-container input{
+
+    width: 95%;
+    padding: 10px;
+    font-size: 25px;
+    border: 0;
+    font-weight: bold;
+    outline: 0;
+    background-color: transparent;
+}
+
+
+.instruction{
+
+    margin-bottom: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    color: red;
+}
+
+.fund-button{
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fund-button button{
+
+    padding: 8px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 18px;
+    font-family: 'Courier New', Courier, monospace;
+    border: 0;
+    outline: 0;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+
+.fund-button button:last-child{
+
+    background-color: red;
+}
+
+
+.input-container input[type=number]::-webkit-inner-spin-button, .input-container input[type=number]::-webkit-outer-spin-button{
+
+    display: none;
+    margin: 01;
+}
+
+
+@media all and (max-width: 516px){
+
+    .fund-popup{
+
+        width: 100%;
+        left: 0;
+    }
+
+    .fund-popup{
+
+        z-index: 1000;
+    }
+
+    .fund-popup-inner{
+
+        position: fixed;
+        bottom: 0;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        width: 100%;
+        padding-bottom: 50px;
+    }
+}
