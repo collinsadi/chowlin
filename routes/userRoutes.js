@@ -32,6 +32,10 @@ router.get("/user/dashboard/payments",checkLogin, (request, response) => {
     
     response.render("user/transactions")
 })
+router.get("/user/dashboard/wallet",checkLogin, (request, response) => {
+    
+    response.render("user/wallet")
+})
 
 
 

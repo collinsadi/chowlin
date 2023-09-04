@@ -6,7 +6,7 @@
     <title>Order Food On Campus From Your Favorite Vendors || Dashboard</title>
     <%- include("../partials/dashboard/styles.ejs") %>
     <%- include("../partials/universal/styles.ejs") %>
-    <link rel="stylesheet" href="/styles/dashboard/payments.css">
+    <link rel="stylesheet" href="/styles/dashboard/wallet.css">
    
 </head>
 <body>
@@ -35,12 +35,12 @@
                         <a href="/user/dashboard/orders"><button>Orders</button></a>
                     </div>
                     
-                    <div class="single-side-bar-button active-button">
+                    <div class="single-side-bar-button ">
                         <i class="fa-solid fa-credit-card"></i>
                         <a href="/user/dashboard/payments"><button>Transactions</button></a>
                     </div>
                     
-                    <div class="single-side-bar-button">
+                    <div class="single-side-bar-button active-button">
                         <i class="fa-solid fa-wallet"></i>
                         <a href="/user/dashboard/wallet"><button>Wallet</button></a>
                     </div>
@@ -99,7 +99,7 @@
                 </div>
 
             </div>
-            <div class="mobile-side-bar-button active-mobile ">
+            <div class="mobile-side-bar-button ">
 
                 <div class="button-icon">
 
@@ -110,7 +110,7 @@
                 </div>
 
             </div>
-            <div class="mobile-side-bar-button ">
+            <div class="mobile-side-bar-button active-mobile ">
 
                 <div class="button-icon">
 
@@ -155,119 +155,66 @@
 
             
 
-
-        <!-- <div class="dashboard-banner">
-
-            <div class="banner-inner">
-
-                <h1>Available for Advertisement</h1>
-
-            </div>
+        <div class="virtual-card-container">
 
 
+                <div class="card-title">
 
-        </div> -->
+                    <h3>Virtual Card</h3>
 
-
-
-        <div class="transactions-array">
-
-            <div class="single-transaction">
-
-                <div class="transaction-icon credit">
-
-                    <i class="fa-solid fa-arrow-up"></i>
+                    <button>Get Virtual Card</button>
 
                 </div>
 
-                <div class="transaction-details">
+                <div class="single-virtual-card">
 
-                 <p>August 20,2023 </p>
+                    <div class="card-top">
 
-                <p>Order Reversal Funds for Cancelled Order ,Order Id #45678 </p>
+                        <h3>Collins Adi</h3>
+                        <h3>CHOWLIN</h3>
 
-                <h3 style="margin-top: 10px;">₦ 25,000</h3>
+                    </div>
 
+                    <div class="card-number">
 
-                <p>Phoenix Restaurant</p>
-
-                </div>
-
-               
-
-                <!-- <button>Report a Problem</button> -->
+                       <h3>4635 <span>7464 </span>     <span>9320</span>  9018</h3>
 
 
-            </div>
-            <div class="single-transaction">
+                    </div>
 
-                <div class="transaction-icon debit">
+                    <div class="card-footer">
 
-                    <i class="fa-solid fa-arrow-down"></i>
+                    <div class="ballance">
 
-                </div>
+                        <p>₦</p><input id="main_ballance" type="password" value="2,000,000" disabled>
 
-                <div class="transaction-details">
+                        <div id="toggleBallance" class="toggle-ballance">
+                            <div id="eye_btn" class="fa-solid fa-eye"></d>
+                        </div>
 
-            <p>August 20,2023 </p>
+                    </div>
 
-                <p>Order Reversal Funds for Cancelled Order ,Order Id #45678 </p>
+                    <div class="footer-right">
 
-                <h3 style="margin-top: 10px;">- ₦ 25,000</h3>
-                    
-                <p>Phoenix Restaurant</p>
+                                    
+
+                    </div>
+
+                    </div>
+
                 
 
-                </div>
-
-               
-
-                <!-- <button>Report a Problem</button> -->
-
-
-            </div>
-            <div class="single-transaction">
-
-                <div class="transaction-icon failed">
-
-                    <i class="fa-solid fa-arrow-down"></i>
 
                 </div>
-
-                <div class="transaction-details">
-
-            <p>August 20,2023 </p>
-
-                <p>Order Reversal Funds for Cancelled Order ,Order Id #45678 </p>
-
-                <h3 style="margin-top: 10px;">- ₦ 25,000</h3>
-
-                <p>Phoenix Restaurant</p>
-
-                </div>
-
-               
-
-                <!-- <button>Report a Problem</button> -->
-
-
-            </div>
            
+            </div>
 
+                <div class="transaction-buttons">
 
-        </div>
+                    <button>Add Money</button>
+                    <button>Freeze Wallet</button>
 
-
-
-
-
-
-
-
-
-
-
-
+                </div>
 
         </div>
 
@@ -279,5 +226,6 @@
 
 
     <%- include("../partials/dashboard/scripts.ejs") %>
+    <script src="/scripts/dashboard/wallet.js"></script>
 </body>
 </html>

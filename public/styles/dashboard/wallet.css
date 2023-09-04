@@ -1,0 +1,96 @@
+
+
+.virtual-card-container{
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+
+.single-virtual-card{
+
+    width: 500px;
+    max-width: 100%;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: var(--primary-color);
+    margin-top: 30px;
+    overflow: hidden;
+    border-left: 8px solid rgba(0, 0, 0, 0.281);
+    border-bottom: 8px solid rgba(0, 0, 0, 0.281);
+    /* border-bottom: 8px solid var(--secondary-color); */
+}
+
+.card-top{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.card-number{
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    margin-top: 50px;
+}
+.card-number span{
+
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+
+.card-footer{
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin-top: 40px;
+}
+
+.ballance{
+
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.ballance input{
+
+    background-color: transparent;
+        font-size: 20px;
+        color: white;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        border: 0;
+        outline: 0;
+        width: 120px;
+}
+
+.ballance p{
+
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-right: 10px;
+    color: white;
+}
+
+
+.toggle-ballance{
+
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
