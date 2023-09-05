@@ -36,6 +36,10 @@ router.get("/user/dashboard/wallet",checkLogin, (request, response) => {
     
     response.render("user/wallet")
 })
+router.get("/user/dashboard/settings",checkLogin, (request, response) => {
+    
+    response.render("user/settings")
+})
 
 
 

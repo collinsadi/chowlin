@@ -41,13 +41,13 @@
                         <a href="/user/dashboard/payments"><button>Transactions</button></a>
                     </div>
                     
-                    <div class="single-side-bar-button active-button">
+                    <div class="single-side-bar-button">
                         <i class="fa-solid fa-wallet"></i>
                         <a href="/user/dashboard/wallet"><button>Wallet</button></a>
                     </div>
 
 
-                    <div class="single-side-bar-button">
+                    <div class="single-side-bar-button active-button">
                         <i class="fa-solid fa-sliders"></i>
                         <a href="/user/dashboard/settings"><button>Settings</button></a>
                     </div>
@@ -111,7 +111,7 @@
                 </div>
 
             </div>
-            <div class="mobile-side-bar-button active-mobile ">
+            <div class="mobile-side-bar-button">
 
                 <div class="button-icon">
 
@@ -122,7 +122,7 @@
                 </div>
 
             </div>
-            <div class="mobile-side-bar-button">
+            <div class="mobile-side-bar-button active-mobile ">
 
                 <div class="button-icon ">
 
@@ -147,125 +147,27 @@
 
         <div class="main-page-header">
 
-            <h3>Wallet</h3>
+            <h3>Settings</h3>
 
         </div>
 
 
         <div class="main-page-inner">
 
-            
-
-        <div class="virtual-card-container">
 
 
-                <div class="card-title">
 
-                    <h3>Virtual Card</h3>
-
-
-                </div>
-
-                <div class="single-virtual-card">
-
-                    <div class="card-top">
-
-                        <h3>Collins Adi</h3>
-                        <h3>CHOWLIN</h3>
-
-                    </div>
-
-                    <div class="card-number">
-
-                       <h3>4635 <span>7464 </span>     <span>9320</span>  9018</h3>
-
-
-                    </div>
-
-                    <div class="card-footer">
-
-                    <div class="ballance">
-
-                        <p>₦</p><input id="main_ballance" type="password" value="2,000,000" disabled>
-
-                        <div id="toggleBallance" class="toggle-ballance">
-                            <div id="eye_btn" class="fa-solid fa-eye"></d>
-                        </div>
-
-                    </div>
-
-                    <div class="footer-right">
-
-                                    
-
-                    </div>
-
-                    </div>
-
-                
-
-
-                </div>
-           
-            </div>
-
-                <div class="transaction-buttons">
-
-                    <button id="add-money">Add Money</button>
-                    <button>Freeze Wallet</button>
-
-                </div>
-
+ 
         </div>
 
 
     </main>
 
 
-    <!-- Fund Wallet Pop up -->
-
-
-    <div id="fund-popup" class="fund-popup">
-
-        <div class="fund-popup-inner">
-
-
-            <div class="input-container">
-
-                <div class="input-icon">
-
-
-                    <i class="fa-solid fa-naira-sign"></i>
-
-                </div>
-
-                <input id="fund-amount" placeholder="0.00" type="number">
-
-            </div>
-
-            <div class="instruction">
-                <p id="error-tracker"></p>
-            </div>
-
-            <div class="fund-button">
-
-                <button id="continue-funding">Continue</button>
-                <button id="abort-funding">Abort</button>
-
-            </div>
-
-
-        </div>
-
-
-    </div>
-
-
-    <%- include("./funded.ejs") %>
+  
 
 
     <%- include("../partials/dashboard/scripts.ejs") %>
-    <script src="/scripts/dashboard/wallet.js"></script>
-    <script src="/scripts/dashboard/funded.js"></script>
+
 </body>
 </html>

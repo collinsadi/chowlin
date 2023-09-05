@@ -1,0 +1,37 @@
+.payment-status-container{
+
+
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.253);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(9px);
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    display: none;
+}
+
+.status-image img{
+
+    width: 100px;
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+
+.status-text{
+
+    margin-top: 15px;
+}
+
+.status-text h3{
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+
+}
