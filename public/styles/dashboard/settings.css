@@ -1,0 +1,221 @@
+.navigation-container{
+
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+}
+
+.navigation-container p{
+
+    padding: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.navigation-container p.active{
+
+    border-bottom: 5px solid var(--primary-color);
+}
+
+.settings-body{
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.settings-body-inner{
+
+    width: 100%;
+    background-color: white;
+    padding: 15px;
+}
+
+
+
+.settings-title{
+
+    width: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.main-setting{
+
+    width: 100%;
+    margin-top: 20px;
+}
+
+.input-group{
+
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.input-group input[type=text],.input-group input[type=number]{
+
+    padding: 15px;
+    font-size: 15px;
+    border: 0;
+    outline: 0;
+    border-bottom: 3px solid gray;
+    background-color: transparent;
+    width: 45%;
+    /* margin-top: 15px; */
+
+}
+
+.input-group input[type=text]:focus,.input-group input[type=number]:focus{
+    border-color: var(--primary-color);
+}
+
+.update-button{
+
+    width: 100%;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+.update-button button{
+
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    padding: 15px;
+    width: 100px;
+    color: white;
+    font-size: 18px;
+    /* border-radius: 15px; */
+
+}
+
+
+
+.check-box-option{
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.check-box-option p{
+
+    font-size: 18px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+
+/* The switch - the box around the slider */
+.switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background: white;
+    border-radius: 50px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    right: 0.3em;
+    bottom: 0.3em;
+    transform: translateX(150%);
+    background-color: var(--primary-color);
+    border-radius: inherit;
+    transition: all 0.4s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.slider:after {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    left: 0.3em;
+    bottom: 0.3em;
+    background-color: #cccccc;
+    border-radius: inherit;
+    transition: all 0.4s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.switch input:focus+.slider {
+    box-shadow: 0 0 1px var(--primary-color);
+}
+
+.switch input:checked+.slider:before {
+    transform: translateY(0);
+}
+
+.switch input:checked+.slider::after {
+    transform: translateX(-150%);
+}
+
+#notification-settings{
+
+    display: none;
+}
+
+#wallet-settings{
+
+    display: none;
+}
+
+
+#security-settings{
+
+    display: none;
+}
+
+
+
+
+
+@media all and (max-width: 516px) {
+    /* your content here */
+
+
+.input-group{
+
+    flex-direction: column;
+}
+
+.input-group input[type=text],.input-group input[type=number]{
+
+    width: 100%;
+}
+
+
+}

@@ -6,8 +6,7 @@
     <title>Order Food On Campus From Your Favorite Vendors || Dashboard</title>
     <%- include("../partials/dashboard/styles.ejs") %>
     <%- include("../partials/universal/styles.ejs") %>
-    <link rel="stylesheet" href="/styles/dashboard/wallet.css">
-    <link rel="stylesheet" href="/styles/dashboard/funded.css">
+    <link rel="stylesheet" href="/styles/dashboard/settings.css">
    
 </head>
 <body>
@@ -156,6 +155,165 @@
 
 
 
+            <div class="navigation-container">
+
+                <p id="personal_btn" class="active">Personal</p>
+                <p id="security_btn">Security</p>
+                <p id="wallet_btn">Wallet</p>
+                <p id="noti_btn">Notifications</p>
+
+            </div>
+
+            <div class="settings-body">
+
+
+                <div class="settings-body-inner">
+
+                    <div class="settings-title">
+                        <h3 id="active-settings">Personal Information</h3>
+                        
+                    </div>
+
+
+                  <div id="personal-settings" class="main-setting">
+
+
+                        <div class="input-group">
+
+                            <input placeholder="First Name" type="text"  id="">
+                            <input placeholder="Last Name" type="text"  id="">
+
+                        </div>
+                        
+                        <div class="input-group">
+
+                            <input placeholder="Email" type="text"  id="">
+                            <input placeholder="Phone Number" type="text"  id="">
+
+                        </div>
+
+
+
+
+                        <div class="update-button">
+                            <button>Save</button>
+                        </div>
+
+
+                    </div> 
+                    
+                    
+                    <div id="security-settings" class="main-setting">
+
+
+                        <div class="input-group">
+
+                            <input placeholder="Old Password" type="text"  id="">
+                            <input placeholder="New Password" type="text"  id="">
+
+                        </div>
+                        
+                        <div class="input-group">
+
+                            <input placeholder="Confirm New Password" type="text"  id="">
+
+                        </div>
+
+
+
+                   
+                        <div class="check-box-option">
+
+                            <p>2 Factor Auth.</p>
+
+                            <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                            </label>
+
+
+                        </div>
+
+                      
+                            <div class="update-button">
+                            <button>Save</button>
+                        </div>
+
+                    </div> 
+
+                     <div id="wallet-settings" class="main-setting">
+
+
+                        <div class="input-group">
+
+                            <input placeholder="New Transaction Pin" type="number"  id="">
+                            <input placeholder="Password" type="text"  id="">
+
+                        </div>
+    
+                   
+                
+                            <div class="update-button">
+                            <button>Save</button>
+                        </div>
+
+                    </div> 
+
+                    <div id="notification-settings" class="main-setting">
+
+
+                        <div class="check-box-option">
+
+                            <p>Account Funding Emails</p>
+
+                            <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                            </label>
+
+
+                        </div>
+                        
+                        <div class="check-box-option">
+
+                            <p>Order Status Emails</p>
+
+                            <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                            </label>
+
+
+                        </div>
+                        <div class="check-box-option">
+
+                            <p>Deals and Special Offer</p>
+
+                            <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                            </label>
+
+
+                        </div>
+                   
+                
+                            <div class="update-button">
+                            <button>Save</button>
+                        </div>
+
+                    </div>  
+
+
+
+
+                </div>
+
+
+
+            </div>
+
+
 
  
         </div>
@@ -168,6 +326,7 @@
 
 
     <%- include("../partials/dashboard/scripts.ejs") %>
+    <script src="/scripts/dashboard/settings.js"></script>
 
 </body>
 </html>
