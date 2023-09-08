@@ -4590,7 +4590,7 @@
 
   function maybeNotifyMissing(iconName, prefix) {
     if (!PRODUCTION && !config.showMissingIcons && iconName) {
-      console.error("Icon with name \"".concat(iconName, "\" and prefix \"").concat(prefix, "\" is missing."));
+      //consoleerror("Icon with name \"".concat(iconName, "\" and prefix \"").concat(prefix, "\" is missing."));
     }
   }
 
@@ -5077,7 +5077,7 @@
       } catch (e) {
         if (!PRODUCTION) {
           if (e.name === 'MissingIcon') {
-            console.error(e);
+            //consoleerror(e);
           }
         }
       }

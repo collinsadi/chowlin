@@ -28,7 +28,7 @@ const response = await fetch(url + "/users/account/fund/verify?refrence="+refren
  
     const data = await response.json()
 
-    console.log(data)
+    //consolelog(data)
 
     if (data.status) {
         

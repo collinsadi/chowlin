@@ -1,5 +1,7 @@
 // alert(url)
 
+
+
 const mobileButtons = document.querySelectorAll(".mobile-side-bar-button")
 
 mobileButtons.forEach(button => {
@@ -22,6 +24,19 @@ mobileButtons.forEach(button => {
 const userName = document.getElementById("user-name")
 const walletHolder = document.getElementById("wallet-holder")
 
+// Settings
+
+const firstNameInput = document.getElementById("first_name")
+const lastName = document.getElementById("last_name")
+const phoneNumber = document.getElementById("phone_number")
+const twoFactorToggle = document.getElementById("two_factor")
+const fundingEmails = document.getElementById("funding_emails")
+const orderEmails = document.getElementById("order_emails")
+const dealsEmails = document.getElementById("deals_emails")
+const panicBallance = document.getElementById("p_ballance")
+const panicStatus = document.getElementById("p_mode")
+
+
 const getUser = async ()=>{
     
 const response = await fetch(url + "/users/get/one", {
@@ -34,6 +49,8 @@ const response = await fetch(url + "/users/get/one", {
     
     const data = await response.json()
 
+
+    
     if(userName){
 
         userName.innerHTML = `${data.user.firstName} ${data.user.lastName},`
@@ -45,8 +62,33 @@ const response = await fetch(url + "/users/get/one", {
         walletHolder.innerHTML = `${data.user.firstName} ${data.user.lastName}`
     }
 
+    if (firstNameInput) {
+        
+        firstNameInput.value = data.user.firstName
+        lastName.value = data.user.lastName
+        phoneNumber.value = data.user.phoneNumber
+    }
 
-    console.log(data)
+    if (twoFactorToggle) {
+        
+        twoFactorToggle.checked = data.user.twoFactor
+    }
+
+    if (fundingEmails) {
+        
+        fundingEmails.checked = data.user.fundingMails
+        orderEmails.checked = data.user.deliveryMails
+        dealsEmails.checked = data.user.dealsMails
+
+    }
+
+    if (panicBallance) {
+        
+        panicBallance.value = data.user.panicBallance
+        panicStatus.checked = data.user.panicStatus
+    }
+
+
 
 }
 

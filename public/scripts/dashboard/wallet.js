@@ -46,7 +46,7 @@ if (continueBallanceButton) {
     continueBallanceButton.addEventListener("click", async () => {
 
         continueBallanceButton.disabled = true
-        continueBallanceButton.innerHTML = "Hold on ..."
+        continueBallanceButton.innerHTML = "Hold on .."
         
     const response = await fetch(url + "/wallet/balance/user", {
         method: "POST",
@@ -121,7 +121,7 @@ abortButton.addEventListener("click", () => {
 
 const fundWallet = async () => {
     
-    continueButton.innerHTML = "Hold on ..."
+    continueButton.innerHTML = "Hold on .."
     continueButton.disabled = true
     continueButton.style.opacity = 5
 
@@ -135,7 +135,7 @@ const fundWallet = async () => {
             amount:amount.value
         })
     })
-    console.log(cookie)
+    //consolelog(cookie)
 
     const data = await response.json()
 
@@ -166,4 +166,4 @@ if (continueButton) {
 }
 
 
-// console.log(cookie)
+// //consolelog(cookie)

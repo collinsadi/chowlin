@@ -256,6 +256,11 @@ header{
     max-width: 100%;
 }
 
+#twoFactorSection{
+
+    display: none;
+}
+
 /* #login-section{
     display: none;
 } */

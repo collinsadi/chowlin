@@ -171,24 +171,23 @@
 
                     <div class="settings-title">
                         <h3 id="active-settings">Personal Information</h3>
-                        
                     </div>
 
 
                   <div id="personal-settings" class="main-setting">
+                        <p id="personal_error"></p>
 
 
                         <div class="input-group">
 
-                            <input placeholder="First Name" type="text"  id="">
-                            <input placeholder="Last Name" type="text"  id="">
+                            <input placeholder="First Name" type="text"  id="first_name">
+                            <input placeholder="Last Name" type="text"  id="last_name">
 
                         </div>
                         
                         <div class="input-group">
 
-                            <input placeholder="Email" type="text"  id="">
-                            <input placeholder="Phone Number" type="text"  id="">
+                            <input placeholder="Phone Number" type="number"  id="phone_number">
 
                         </div>
 
@@ -196,7 +195,7 @@
 
 
                         <div class="update-button">
-                            <button>Save</button>
+                            <button id="edit_personal_btn">Save</button>
                         </div>
 
 
@@ -205,17 +204,18 @@
                     
                     <div id="security-settings" class="main-setting">
 
+                        <p id="security_error"></p>
 
                         <div class="input-group">
 
-                            <input placeholder="Old Password" type="text"  id="">
-                            <input placeholder="New Password" type="text"  id="">
+                            <input placeholder="Old Password" type="password"  id="old_password">
+                            <input placeholder="New Password" type="password"  id="new_password">
 
                         </div>
                         
                         <div class="input-group">
 
-                            <input placeholder="Confirm New Password" type="text"  id="">
+                            <input placeholder="Confirm New Password" type="password"  id="c_password">
                            
 
                         </div>
@@ -228,7 +228,7 @@
                             <p>2 Factor Auth.</p>
 
                             <label class="switch">
-                            <input type="checkbox">
+                            <input id="two_factor" type="checkbox">
                             <span class="slider"></span>
                             </label>
 
@@ -239,38 +239,69 @@
 
                       
                             <div class="update-button">
-                            <button>Save</button>
+                            <button id="save_security">Save</button>
                         </div>
 
                     </div> 
 
                      <div id="wallet-settings" class="main-setting">
 
+                        <p id="wallet-error"></p>
 
                         <div class="input-group">
 
-                            <input placeholder="New Transaction Pin" type="number"  id="">
-                            <input placeholder="Password" type="text"  id="">
+                            <input placeholder="New Transaction Pin" type="number"  id="t_pin">
+                            <input placeholder="Password" type="password"  id="password_for_pin">
 
                         </div>
     
                    
                 
                             <div class="update-button">
-                            <button>Save</button>
+                            <button id="save_wallet">Save</button>
+                        </div>
+
+                        <!-- Panic Ballance -->
+
+                        <div class="input-group">
+
+                            <input placeholder="Panic Ballance" type="number"  id="p_ballance">
+                            
+
+                        </div>
+
+                        <div class="check-box-option">
+
+                            <p>Panic Mode</p>
+
+                            <label class="switch">
+                            <input id="p_mode" type="checkbox">
+                            <span class="slider"></span>
+                            </label>
+
+
+                        </div>
+    
+                   
+                
+                            <div class="update-button">
+                            <button id="save_panic_balance">Save</button>
                         </div>
 
                     </div> 
 
+                    <!-- notification -->
+
                     <div id="notification-settings" class="main-setting">
 
+                        <p id="notification-error"></p>
 
                         <div class="check-box-option">
 
                             <p>Account Funding Emails</p>
 
                             <label class="switch">
-                            <input type="checkbox">
+                            <input id="funding_emails" type="checkbox">
                             <span class="slider"></span>
                             </label>
 
@@ -282,7 +313,7 @@
                             <p>Order Status Emails</p>
 
                             <label class="switch">
-                            <input type="checkbox">
+                            <input id="order_emails" type="checkbox">
                             <span class="slider"></span>
                             </label>
 
@@ -293,7 +324,7 @@
                             <p>Deals and Special Offer</p>
 
                             <label class="switch">
-                            <input type="checkbox">
+                            <input id="deals_emails" type="checkbox">
                             <span class="slider"></span>
                             </label>
 
@@ -302,7 +333,7 @@
                    
                 
                             <div class="update-button">
-                            <button>Save</button>
+                            <button id="save_notification">Save</button>
                         </div>
 
                     </div>  

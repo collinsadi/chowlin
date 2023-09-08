@@ -89,7 +89,7 @@ const signUpUser = async () => {
         return true
     }
 
-    console.log(data)
+    //consolelog(data)
     
 }
 
@@ -104,7 +104,7 @@ if (signupButton) {
 
         const sign = await signUpUser()
 
-        console.log(sign)
+        //consolelog(sign)
        
         if (!sign) {
             e.target.innerHTML = "Sign Up"
@@ -145,7 +145,7 @@ const verifyEmail = async () => {
     
     const code = firstBox.value+secondBox.value+thirdBox.value+fourthBox.value
 
-    console.log(code)
+    //consolelog(code)
 
     verifyButton.innerHTML = "verifying.."
 
@@ -164,7 +164,7 @@ const verifyEmail = async () => {
 
     const data = await response.json()
 
-    console.log(data)
+    //consolelog(data)
 
     verifyButton.innerHTML = "Verify"
     
@@ -202,7 +202,7 @@ const verifyEmail = async () => {
 if (emailVerificationSection) {
     
     firstBox.addEventListener("keyup", (e) => {
-        console.log(firstBox.value)
+        //consolelog(firstBox.value)
 
         if (e.key === "Backspace" || e.code === "Backspace") {
 
@@ -329,7 +329,7 @@ if (emailVerificationSection) {
 
         if (fourthBox.value !== "") {
             
-            console.log("Last Number")
+            //consolelog("Last Number")
             verifyEmail()
         }
     })
@@ -338,11 +338,11 @@ if (emailVerificationSection) {
     
     //     const pastedData = e.clipboardData.getData("text")
 
-    //     console.log(pastedData)
+    //     //consolelog(pastedData)
 
     //     if (isNaN(pastedData)) {
             
-    //         // console.log("NNobe ")
+    //         // //consolelog("NNobe ")
     //         fourthBox.value = ""
     //         verificationError.innerHTML = "Enter a Valid Number"
     //         verificationError.style.color = "red"
@@ -351,7 +351,7 @@ if (emailVerificationSection) {
     //     if (pastedData.length > 1) {
             
     //         const numbers = pastedData.split("")
-    //         console.log(numbers)
+    //         //consolelog(numbers)
     //         firstBox.value = numbers[0]
     //         secondBox.value = numbers[1]
     //         thirdBox.value = numbers[2]
@@ -373,6 +373,9 @@ const loginEmail = document.getElementById("login_email")
 const loginPassword = document.getElementById("login_password")
 const loginError = document.getElementById("loginerror")
 const forgotPasswordButton = document.getElementById("resetpassword")
+const twoFactorSection = document.getElementById("twoFactorSection")
+const verifyTwoFactor = document.getElementById("verify_two_btn")
+
 
 
 const loginUser = async () => {
@@ -393,13 +396,21 @@ const loginUser = async () => {
 
     const data = await response.json()
 
-    console.log(data)
+    //consolelog(data)
 
     if (data.message === "Please Verify Email") {
         localStorage.setItem("email", data.email)
         
         logInSection.style.display = "none"
         emailVerificationSection.style.display = "block"
+    }
+
+    if (data.message === "Two Factor Enabled") {
+        localStorage.setItem("email", data.email)
+
+        
+        logInSection.style.display = "none"
+        twoFactorSection.style.display = "block"
     }
 
     if (!data.status) {
@@ -449,7 +460,7 @@ const sendPasswordResetToken = async () => {
 
     const data = await response.json()
 
-    console.log(data)
+    //consolelog(data)
 
     if (!data.status) {
         
@@ -476,3 +487,217 @@ if (forgotPasswordButton) {
         sendPasswordResetToken()
     })
 }
+
+
+
+// Two Factor Authentication
+
+
+const firstBox2 = document.getElementById("first_box2")
+const secondBox2 = document.getElementById("second_box2")
+const thirdBox2 = document.getElementById("third_box2")
+const fourthBox2 = document.getElementById("fourth_box2")
+const verificationError2 = document.getElementById("verificationerror2")
+const boxes2 = document.querySelectorAll("boxes")
+
+const verifyTwoFactorAuth = async () => {
+    
+    const code = firstBox2.value+secondBox2.value+thirdBox2.value+fourthBox2.value
+
+    //consolelog(code)
+
+    verifyTwoFactor.innerHTML = "verifying.."
+
+    verifyTwoFactor.disabled = true
+
+    const response = await fetch(url + "/users/login/twofactor", {
+        method: "POST",
+        headers: {
+            "Content-Type":"application/json"
+        },
+        body: JSON.stringify({
+            email: localStorage.getItem("email"),
+            code
+        })
+    })
+
+    const data = await response.json()
+
+    //consolelog(data)
+
+    verifyTwoFactor.innerHTML = "Verify"
+    
+    if (!data.status) {
+        verificationError2.style.color = "red"
+        verificationError2.innerHTML = data.message
+
+        boxes.forEach(box => {
+            box.style.border = "2px solid red"
+        })
+    }
+
+    if(data.status){
+
+        verificationError2.style.color = "green"
+        verificationError2.innerHTML = data.message
+
+        setCookie("jwt", data.user.token, 30)
+        localStorage.clear()
+        
+        setTimeout(() => {
+            // location.href = "/user/dashboard"
+            location.reload()
+        }, 1000);
+
+    }
+
+    verifyTwoFactor.disabled = false
+    
+
+}
+
+
+
+if (verifyTwoFactor) {
+    
+    firstBox2.addEventListener("keyup", (e) => {
+        //consolelog(firstBox2.value)
+
+        if (e.key === "Backspace" || e.code === "Backspace") {
+
+            firstBox2.value=""
+            
+            return
+        }
+
+        if (isNaN(firstBox2.value)) {
+            
+            firstBox2.value = ""
+            verificationError2.innerHTML = "Enter a Valid Number"
+            verificationError2.style.color = "red"
+            return
+        } else {
+            verificationError2.innerHTML=""
+        }
+
+        if (firstBox2.value.length > 1) {
+            
+            const numbers = firstBox2.value.split("")
+            firstBox2.value = numbers[0]
+            secondBox2.value = numbers[1]
+            thirdBox2.value = numbers[2]
+            fourthBox2.value = numbers[3]
+        }
+        
+        secondBox2.focus()
+        
+    })
+
+    secondBox2.addEventListener("keyup", (e) => {
+
+        if (e.key === "Backspace" || e.code === "Backspace") {
+            
+            secondBox2.value=""
+            firstBox2.focus()
+
+            return
+        }
+
+         if (isNaN(secondBox2.value)) {
+            
+            secondBox2.value = ""
+            verificationError2.innerHTML = "Enter a Valid Number"
+            verificationError2.style.color = "red"
+            return
+        }else {
+            verificationError2.innerHTML=""
+        }
+
+        if (secondBox2.value.length > 1) {
+            
+            const numbers = secondBox2.value.split("")
+            firstBox2.value = numbers[0]
+            secondBox2.value = numbers[1]
+            thirdBox2.value = numbers[2]
+            fourthBox2.value = numbers[3]
+        }
+        
+        thirdBox2.focus()
+    })
+
+    thirdBox2.addEventListener("keyup", (e) => {
+
+        if (e.key === "Backspace" || e.code === "Backspace") {
+            
+            thirdBox2.value=""
+            secondBox2.focus()
+
+            return
+        }
+
+         if (isNaN(thirdBox2.value)) {
+            
+            thirdBox2.value = ""
+            verificationError2.innerHTML = "Enter a Valid Number"
+            verificationError2.style.color = "red"
+            return
+        }else {
+            verificationError2.innerHTML=""
+        }
+
+        if (thirdBox2.value.length > 1) {
+            
+            const numbers = thirdBox2.value.split("")
+            firstBox2.value = numbers[0]
+            secondBox2.value = numbers[1]
+            thirdBox2.value = numbers[2]
+            fourthBox2.value = numbers[3]
+        }
+
+        fourthBox2.focus()
+    })
+
+    fourthBox2.addEventListener("keyup", (e) => {
+
+        if (e.key === "Backspace" || e.code === "Backspace") {
+            
+            fourthBox2.value=""
+            thirdBox2.focus()
+
+            return
+        }
+
+         if (isNaN(fourthBox2.value)) {
+            
+            fourthBox2.value = ""
+            verificationError2.innerHTML = "Enter a Valid Number"
+            verificationError2.style.color = "red"
+            return
+        }else {
+            verificationError2.innerHTML=""
+        }
+
+        if (fourthBox2.value.length > 1) {
+            
+            const numbers = fourthBox2.value.split("")
+            firstBox2.value = numbers[0]
+            secondBox2.value = numbers[1]
+            thirdBox2.value = numbers[2]
+            fourthBox2.value = numbers[3]
+        }
+
+        if (fourthBox2.value !== "") {
+            
+            //consolelog("Last Number")
+            verifyTwoFactorAuth()
+        }
+    })
+
+   
+
+
+    verifyTwoFactor.addEventListener("click", () => {
+        verifyTwoFactorAuth()
+    })
+}
+
