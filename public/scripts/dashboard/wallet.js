@@ -1,15 +1,28 @@
 const eyeButton = document.getElementById("eye_btn")
 const toggleEyeButton = document.getElementById("toggleBallance")
 const ballance = document.getElementById("main_ballance")
+const ballancePopup = document.getElementById("balance-popup")
+const abortBallanceCheck = document.getElementById("abort-balance")
+const ballanceErrorTracker = document.getElementById("ballance-error-tracker")
+const continueBallanceButton = document.getElementById("continue-balance")
+const transactionPin = document.getElementById("transaction-pin")
 
 
-toggleEyeButton.addEventListener("click", () => {
+toggleEyeButton.addEventListener("click",  () => {
     // alert("Okay")
 
     if (ballance.type === "password") {
-        ballance.type = "text"
-        eyeButton.classList.remove("fa-eye-slash")
-        eyeButton.classList.add("fa-eye")
+
+        ballancePopup.style.display = "flex"
+        
+
+ 
+
+        // alert("Wahala")
+
+        // ballance.type = "text"
+        // eyeButton.classList.remove("fa-eye-slash")
+        // eyeButton.classList.add("fa-eye")
     } else {
         
         ballance.type = "password"
@@ -19,6 +32,66 @@ toggleEyeButton.addEventListener("click", () => {
 
    
 })
+
+
+if (abortBallanceCheck) {
+    
+    abortBallanceCheck.addEventListener("click", () => {
+        ballancePopup.style = "none"
+    })
+}
+
+if (continueBallanceButton) {
+    
+    continueBallanceButton.addEventListener("click", async () => {
+
+        continueBallanceButton.disabled = true
+        continueBallanceButton.innerHTML = "Hold on ..."
+        
+    const response = await fetch(url + "/wallet/balance/user", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "authorization":`Bearer ${cookie}`
+        },
+        body: JSON.stringify({
+            pin:transactionPin.value
+        })
+    }) 
+
+        const data = await response.json()
+        
+        if (!data.status) {
+
+            
+            ballanceErrorTracker.innerHTML = data.message
+            ballanceErrorTracker.style.color = "red"
+
+            continueBallanceButton.disabled = false
+            continueBallanceButton.innerHTML = "Try Again"
+
+        }
+
+        if (data.status) {
+
+            
+            continueBallanceButton.disabled = false
+            continueBallanceButton.innerHTML = "Continue"
+            
+            ballancePopup.style.display = "none"
+            ballance.value = data.ballance
+            ballance.type = "text"
+
+
+        }
+
+
+
+
+    })
+
+}
+
 
 
 const fundWalletPopup = document.getElementById("fund-popup")

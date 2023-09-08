@@ -53,3 +53,16 @@
     border: 0;
     color: white;
 }
+
+.order-section-title{
+
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: white;
+    border-bottom: 2px solid var(--primary-color);
+    margin-bottom: 20px;
+    margin-top: 20px;
+    
+}

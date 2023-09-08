@@ -18,3 +18,39 @@ mobileButtons.forEach(button => {
 
     }
 })
+
+const userName = document.getElementById("user-name")
+const walletHolder = document.getElementById("wallet-holder")
+
+const getUser = async ()=>{
+    
+const response = await fetch(url + "/users/get/one", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "authorization":`Bearer ${cookie}`
+        }
+})
+    
+    const data = await response.json()
+
+    if(userName){
+
+        userName.innerHTML = `${data.user.firstName} ${data.user.lastName},`
+        
+    }
+
+    if (walletHolder) {
+        
+        walletHolder.innerHTML = `${data.user.firstName} ${data.user.lastName}`
+    }
+
+
+    console.log(data)
+
+}
+
+
+
+
+getUser()

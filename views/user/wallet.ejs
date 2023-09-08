@@ -170,7 +170,7 @@
 
                     <div class="card-top">
 
-                        <h3>Collins Adi</h3>
+                        <h3 id="wallet-holder"></h3>
                         <h3>CHOWLIN</h3>
 
                     </div>
@@ -260,6 +260,43 @@
 
     </div>
 
+
+    <div id="balance-popup"   class="fund-popup">
+
+        <div class="fund-popup-inner">
+
+
+            <div class="input-container">
+
+                <div class="input-icon">
+
+
+                    <i class="fa-solid fa-lock"></i>
+
+                </div>
+
+                <input  id="transaction-pin" placeholder="Pin" type="number">
+
+            </div>
+
+            <div class="instruction">
+                <p id="ballance-error-tracker"></p>
+            </div>
+
+            <div class="fund-button">
+
+                <button id="continue-balance">Continue</button>
+                <button id="abort-balance">Abort</button>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+  
 
     <%- include("./funded.ejs") %>
 
