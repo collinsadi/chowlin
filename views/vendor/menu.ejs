@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Dashboard</title>
+    <%- include("../partials/dashboard/styles.ejs") %>
+    <%- include("../partials/universal/styles.ejs") %>
+    <link rel="stylesheet" href="/styles/vendor/menu.css">
+   
+</head>
+<body>
+   
+    <div class="side-bar">
+
+        <div class="side-bar-inner">
+
+            <div class="side-bar-top">
+
+                <h3>CHOWLIN</h3>
+
+            </div>
+
+            <div class="side-bar-buttons">
+
+                <div class="side-bar-buttons-inner">
+
+                    <div class="single-side-bar-button">
+                        <i class="fa-solid fa-table-columns"></i>
+                        <a href="/vendor/dashboard"><button>Dashboard</button></a>
+                    </div>
+                    <div class="single-side-bar-button  active-button">
+                        <i class="fa-solid fa-bowl-food"></i>
+                        <a href="/vendor/menu"><button>Menu</button></a>
+                    </div>
+
+                    <div class="single-side-bar-button">
+                        <i class="fa-solid fa-cart-flatbed"></i>
+                        <a href="/vendor/dashboard/orders"><button>Orders</button></a>
+                    </div>
+                    
+                    <div class="single-side-bar-button">
+                        <i class="fa-solid fa-credit-card"></i>
+                        <a href="/vendor/dashboard/payments"><button>Transactions</button></a>
+                    </div>
+                    
+                    <div class="single-side-bar-button">
+                        <i class="fa-solid fa-wallet"></i>
+                        <a href="/vendor/dashboard/wallet"><button>Wallet</button></a>
+                    </div>
+
+
+                    <div class="single-side-bar-button">
+                        <i class="fa-solid fa-sliders"></i>
+                        <a href="/vendor/dashboard/settings"><button>Settings</button></a>
+                    </div>
+
+
+
+
+
+
+
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+
+ <!-- active-mobile -->
+
+    <!-- mobile Sidebar -->
+
+    <div class="mobile-side-bar">
+
+        <div class="mobile-side-bar-inner">
+
+            <div class="mobile-side-bar-button">
+
+                <div class="button-icon">
+
+                    <a href="/vendor/dashboard">
+                    <button><i class="fa-solid fa-table-columns"></i></button></a>
+                
+
+                </div>
+
+            </div>
+            <div class="mobile-side-bar-button   active-mobile ">
+
+                <div class="button-icon">
+
+                    <a href="/vendor/menu">
+                    <button><i class="fa-solid fa-bowl-food"></i></button></a>
+                
+
+                </div>
+
+            </div>
+            <div class="mobile-side-bar-button">
+
+                <div class="button-icon">
+
+                    <a href="/vendor/dashboard/orders">
+                    <button><i class="fa-solid fa-cart-flatbed"></i></button></a>
+                
+
+                </div>
+
+            </div>
+            <div class="mobile-side-bar-button">
+
+                <div class="button-icon">
+
+                    <a href="/vendor/dashboard/payments">
+                    <button><i class="fa-solid fa-credit-card"></i></button></a>
+                
+
+                </div>
+
+            </div>
+            <div class="mobile-side-bar-button ">
+
+                <div class="button-icon">
+
+                    <a href="/vendor/dashboard/wallet">
+                    <button><i class="fa-solid fa-wallet"></i></button></a>
+                
+
+                </div>
+
+            </div>
+            <div class="mobile-side-bar-button">
+
+                <div class="button-icon ">
+
+                    <a href="/vendor/dashboard/settings">
+                    <button><i class="fa-solid fa-sliders"></i></button></a>
+                
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+ <!-- mobile Sidebar Ends Here -->
+
+
+
+    <main class="main-page">
+
+        <div class="main-page-header">
+
+            <h3>Your Menu</h3>
+
+        </div>
+
+
+        <div class="main-page-inner">
+
+            <div class="search-food">
+
+                <div class="search-container">
+                    <input type="text">
+                    <div class="magnify">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
+
+            </div>
+
+            
+
+
+            <div class="foods-array">
+
+                <div class="add-food-button">
+                    <button id="add_to_menu">+ Add to Menu</button>
+                </div>
+
+                <div class="foods-array-inner">
+
+
+                    <div class="single-food">
+
+
+                        <div class="food-image">
+
+                            <img src="/images/food.png" alt="">
+
+                        </div>
+                        <div class="food-bottom">
+
+                            <h3>Indomie</h3>
+                            <p>Fully Spiced Indomie</p>
+                            <span>24,000</span>
+
+                            <div class="edit-button">
+
+                                <button><i class="fa-solid fa-pen-to-square"></i></button>
+                                <button><i class="fa-solid fa-trash"></i></button>
+
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+                    <div class="single-food">
+
+
+                        <div class="food-image">
+
+                            <img src="/images/food.png" alt="">
+
+                        </div>
+                        <div class="food-bottom">
+
+                            <h3>Indomie</h3>
+                            <p>Fully Spiced Indomie</p>
+                            <span>24,000</span>
+
+                            <div class="edit-button">
+
+                                <button><i class="fa-solid fa-pen-to-square"></i></button>
+                                <button><i class="fa-solid fa-trash"></i></button>
+
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+                    <div class="single-food">
+
+
+                        <div class="food-image">
+
+                            <img src="/images/food.png" alt="">
+
+                        </div>
+                        <div class="food-bottom">
+
+                            <h3>Indomie</h3>
+                            <p>Fully Spiced Indomie</p>
+                            <span>24,000</span>
+
+                            <div class="edit-button">
+
+                                <button><i class="fa-solid fa-pen-to-square"></i></button>
+                                <button><i class="fa-solid fa-trash"></i></button>
+
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+                    <div class="single-food">
+
+
+                        <div class="food-image">
+
+                            <img src="/images/food.png" alt="">
+
+                        </div>
+                        <div class="food-bottom">
+
+                            <h3>Indomie</h3>
+                            <p>Fully Spiced Indomie</p>
+                            <span>24,000</span>
+
+                            <div class="edit-button">
+
+                                <button><i class="fa-solid fa-pen-to-square"></i></button>
+                                <button><i class="fa-solid fa-trash"></i></button>
+
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+                    <div class="single-food">
+
+
+                        <div class="food-image">
+
+                            <img src="/images/food.png" alt="">
+
+                        </div>
+                        <div class="food-bottom">
+
+                            <h3>Indomie</h3>
+                            <p>Fully Spiced Indomie</p>
+                            <span>24,000</span>
+
+                            <div class="edit-button">
+
+                                <button><i class="fa-solid fa-pen-to-square"></i></button>
+                                <button><i class="fa-solid fa-trash"></i></button>
+
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+                    <div class="single-food">
+
+
+                        <div class="food-image">
+
+                            <img src="/images/food.png" alt="">
+
+                        </div>
+                        <div class="food-bottom">
+
+                            <h3>Indomie</h3>
+                            <p>Fully Spiced Indomie</p>
+                            <span>24,000</span>
+
+                            <div class="edit-button">
+
+                                <button><i class="fa-solid fa-pen-to-square"></i></button>
+                                <button><i class="fa-solid fa-trash"></i></button>
+
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+                
+
+
+
+
+
+                </div>
+
+
+
+            </div>
+            
+
+
+
+
+            <div id="add-food-modal" class="add-food-modal">
+
+                
+                <div class="food-modal-inner">
+
+                    <div class="food-modal-title">
+                        <h3>Add to Menu</h3>
+                    </div> 
+                    
+                    <div class="selected-image">
+                            <img id="selected-image" src="/images/food.png" alt="">
+                            <p id="fooderrorTracker"></p>
+                    </div>
+
+                    <div class="food-form-container">
+
+                        <div class="upload-image">
+                            <label for="foodimage"> <i class="fa-solid fa-upload"></i> Upload Image</label>
+                            <input style="display: none;" name="foodimage" id="foodimage" type="file">
+                        </div>
+
+                        <div class="input-case">
+                            <input id="foodname" type="text" placeholder="Food Name">
+                        </div>
+                        <div class="input-case">
+                            <textarea id="foodDesc" placeholder="Brief Description"></textarea>
+                        </div>
+                        <div class="input-case">
+                            <input id="foodPrice" type="number" placeholder="Food Price">
+                        </div>
+                       
+
+
+                    </div>
+
+
+                    <div class="food-form-action-buttons">
+
+                        <button id="cancel_newfood">cancel</button>
+                        <button id="continue_toadd_food">Add Food</button>
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+
+
+    </main>
+
+
+
+
+
+    <%- include("../partials/dashboard/scripts.ejs") %>
+    <script src="/scripts/vendor/universal.js"></script>
+    <script src="/scripts/vendor/menu.js"></script>
+</body>
+</html>

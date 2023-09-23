@@ -15,8 +15,13 @@ mobileButtons.forEach(button => {
             
        
         // } 
+
+        if (span) {
+            
+            span.style.display = "inline-block"
+
+        }
         
-        span.style.display = "inline-block"
 
     }
 })

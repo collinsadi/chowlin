@@ -13,6 +13,16 @@
     --secondary-color:#FFC501;
     --tertiary-color:
 }
+/* :root{
+
+    --black-color:black;
+    --black-text:black;
+    --white-color:white;
+    --white-text:white;
+    --primary-color:#0C513F;
+    --secondary-color:#FFC501;
+    --tertiary-color:
+} */
 
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button{

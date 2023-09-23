@@ -1,0 +1,310 @@
+.foods-array{
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 50px;
+    flex-direction: column;
+  
+
+}
+
+.foods-array-inner{
+
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.single-food{
+
+    width: 250px;
+    max-width: 100%;
+    background-color: white;
+    border-radius: 15px;
+    margin-top: 10px;
+    /* margin-left: 5px; */
+    
+}
+
+.food-image{
+
+    width: 100%;
+    border-radius: inherit;
+}
+
+.food-image img{
+
+    max-width: 100%;
+    border-radius: inherit;
+}
+
+.food-bottom{
+
+    width: 100%;
+    padding: 5px;
+}
+
+.food-bottom h3{
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    margin-bottom: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.food-bottom p{
+
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 5px;
+}
+.food-bottom span{
+
+    margin-top: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    color: var(--primary-color);
+    font-size: 20px;
+}
+
+.edit-button{
+
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.edit-button button{
+
+    padding: 10px;
+    background-color: var(--primary-color);
+    border: 0;
+    outline: 0;
+    color: white;
+    font-size: 15px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.search-food{
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.search-container{
+    border: 2px solid var(--primary-color);
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 15px;
+    padding-right: 15px;
+}
+
+.magnify{
+
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.search-container input{
+    padding: 15px;
+    outline: 0;
+    border: 0;
+    background-color: transparent;
+    width: 95%;
+    font-size: 20px;
+}
+
+
+.add-food-button{
+
+    width:90%;
+    margin-top: 15px;
+    
+}
+.add-food-button button{
+
+    padding: 10px;
+    border: 0;
+    outline: 0;
+    background-color: var(--primary-color);
+    font-size: 20px;
+    color: white;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+
+
+
+.add-food-modal{
+
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.39);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    top: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    
+}
+
+
+.food-modal-inner{
+
+    width: 400px;
+    max-width: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.food-modal-title{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 10px;
+}
+
+.selected-image{
+
+    width: 300px;
+    max-width: 100%;
+}
+
+.selected-image img{
+
+    max-width: 100%;
+    border-radius: 15px;
+    max-height: 260px;
+}
+
+.upload-image{
+
+    width: 100%;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.upload-image label{
+
+    background-color: black;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* width: 300px; */
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.food-form-container{
+
+    width: 300px;
+    max-width: 100%;
+}
+
+.input-case{
+
+    width: 100%;
+    max-width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+.input-case input{
+
+    padding: 10px;
+    border: 1px solid gray;
+    background-color: transparent;
+    outline: 0;
+    width: 100%;
+}
+
+.input-case textarea{
+
+    width: 100%;
+}
+
+.food-form-action-buttons button:first-child{
+
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    font-size: 18px;
+
+}
+
+.food-form-action-buttons button:last-child{
+
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    padding: 10px;
+    /* border-radius: 15px; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media all and (max-width: 516px) {
+    /* your content here */
+
+    .single-food{
+
+        width: 200px;
+    }
+
+    .add-food-modal{
+        margin-bottom: 30px;
+    }
+    .food-modal-inner{
+
+        padding-bottom: 30px;
+    }
+}
+
+@media all and (max-width: 414px){
+
+    .single-food{
+
+        width: 100%;
+    }
+
+}
