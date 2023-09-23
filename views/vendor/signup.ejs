@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Sign Up</title>
+    <%- include("../partials/universal/styles.ejs") %>
+    <link rel="stylesheet" href="/styles/vendor/login.css">
+
+</head>
+<body>
+    
+
+    <div class="page-container">
+
+
+        <div class="login-left">
+
+            <div class="login-left-inner">
+
+            <div class="login-title">
+
+            <h3>Welcome to Chowlin </h3>
+            <p>We are Happy to Know that You'll Love to Sell on Chowlin</p>
+
+            </div>
+
+
+            <div id="second_step" class="login-form">
+
+                <div class="step">
+
+                    <p>Step 2: Business Informations</p>
+
+                </div>
+
+
+                <div class="form-group">
+
+           
+
+                    <div class="form-cont">
+
+                        <div class="input-icon">
+                        <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <input id="phone_number" autocomplete="off" placeholder="Mobile Number" name="phone" type="number">
+                    </div>
+
+                </div>
+                <div class="form-group">
+
+
+                    <div class="form-cont">
+
+                        <div class="input-icon">
+                        <i class="fa-solid fa-landmark"></i>
+                        </div>
+                        <input id="businessName" autocomplete="off" placeholder="Business Name" name="Business Name" type="text">
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label id="imageLabel" for="businessImage"><i class="fa-solid fa-upload"></i>Upload Business Image</label>
+
+                    <input style="display: none;" type="file" id="businessImage" name="businessImage" >
+
+
+                    
+
+                </div>
+                
+
+
+                <div class="form-group">
+                    <button id="go-back">Back</button>
+                    <button id="final-step">Next</button>
+                </div>
+
+                <div class="agree">
+                    <input type="checkbox" name="" id="terms">
+                    <p>I agree to Chowlin Terms of Service and Privacy Policy</p>
+                </div>
+
+                <div class="new-here">
+                    <p>Already Have an Account? <a href="/vendor/login.php">Login!</a></p>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+            <div id="first_step" class="login-form">
+
+                <div class="step">
+
+                    <p>Step 1: Personal Informations</p>
+                    <!-- <p>An Error Occured</p> -->
+
+                </div>
+
+
+                <div class="form-group">
+
+         
+
+                    <div class="form-cont">
+
+                        <div class="input-icon">
+                        <i class="fa-solid fa-user"></i>
+                        </div>
+                        <input id="firstName" autocomplete="off" placeholder="First Name" name="First Name" type="text">
+                    </div>
+
+                </div>
+                <div class="form-group">
+
+               
+
+                    <div class="form-cont">
+
+                        <div class="input-icon">
+                        <i class="fa-solid fa-user"></i>
+                        </div>
+                        <input id="lastName" autocomplete="off" placeholder="Last Name" name="Lastname" type="text">
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+
+            
+
+                    <div class="form-cont">
+
+                        <div class="input-icon">
+                        <i class="fa-regular fa-envelope"></i>
+                        </div>
+                        <input id="email" autocomplete="off" placeholder="Email" name="Email" type="text">
+                    </div>
+
+                </div>
+                <div class="form-group">
+
+             
+
+                    <div class="form-cont">
+
+                        <div class="input-icon">
+                        <i class="fa-solid fa-lock"></i>
+                        </div>
+                        <input id="password" autocomplete="off" placeholder="Password" name="Password" type="password">
+                    </div>
+
+                </div>
+                <div class="form-group">
+
+                  
+
+                    <div class="form-cont">
+
+                        <div class="input-icon">
+                        <i class="fa-solid fa-lock"></i>
+                        </div>
+                        <input id="confirmPassword" autocomplete="off" placeholder="Confirm Password" name="Password" type="password">
+                    </div>
+
+                </div>
+                <div class="student">
+                    <input id="studentStatus" type="checkbox">
+                    <p>I am a Student </p>
+                </div>
+
+
+
+                <div class="form-group">
+                    <button id="next-step">Next</button>
+                </div>
+
+               
+
+
+                <div class="new-here">
+                    <p>Already Have an Account? <a href="/vendor/login.php">Login!</a></p>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <div class="login-right"> </div>
+
+
+    </div>
+
+
+    <%- include("../partials/universal/scripts.ejs") %>
+    <script src="/scripts/vendor/signup.js"></script>
+</body>
+</html>

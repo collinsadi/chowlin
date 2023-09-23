@@ -19,14 +19,35 @@ const checkLogin = (request, response,next)=>{
 }
 
 
+router.get("/vendor/signup.php", (request, response) => {
+    
+    response.render("vendor/signup")
+})
+
+
+router.get("/vendor/signup", (request, response) => {
+    
+    response.redirect("/vendor/signup.php")
+})
+
+
 router.get("/vendor/login.php", (request, response) => {
     
     response.render("vendor/login")
 })
+
+
 router.get("/vendor/login", (request, response) => {
     
     response.redirect("/vendor/login.php")
 })
+
+
+
+
+
+
+
 router.get("/vendor/dashboard",checkLogin, (request, response) => {
     
     response.render("vendor/dashboard")

@@ -5,12 +5,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vendor Login</title>
     <%- include("../partials/universal/styles.ejs") %>
+    <link rel="stylesheet" href="/styles/vendor/login.css">
 
 </head>
 <body>
     
 
-    <h1>Login as a Vendor</h1>
+    <div class="page-container">
+
+
+        <div class="login-left">
+
+            <div class="login-left-inner">
+
+            <div class="login-title">
+
+            <h3>Welcome Back Vendor </h3>
+
+            </div>
+
+
+            <div class="login-form">
+
+
+                <div class="form-group">
+
+                    <!-- <p>Email</p> -->
+
+                    <div class="form-cont">
+
+                        <div class="input-icon">
+                        <i class="fa-regular fa-envelope"></i>
+                        </div>
+                        <input autocomplete="off" placeholder="Email" name="Email" type="text">
+                    </div>
+
+                </div>
+                <div class="form-group">
+
+                    <!-- <p>Email</p> -->
+
+                    <div class="form-cont">
+
+                        <div class="input-icon">
+                        <i class="fa-solid fa-lock"></i>
+                        </div>
+                        <input autocomplete="off" placeholder="Password" name="Password" type="password">
+                    </div>
+
+                </div>
+
+
+
+                <div class="form-group">
+                    <button>Log in</button>
+                </div>
+
+                <!-- <div class="agree">
+                    <input type="checkbox" name="" id="">
+                    <p>I agree to Chowlin Terms of Service and Privacy Policy</p>
+                </div> -->
+
+                <div class="new-here">
+                    <p>Don't Have an Account? <a href="/vendor/signup.php">Sign Up!</a></p>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <div class="login-right"> </div>
+
+
+    </div>
 
 
     <%- include("../partials/universal/scripts.ejs") %>
