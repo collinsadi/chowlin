@@ -89,7 +89,7 @@ const signUpUser = async () => {
         return true
     }
 
-    //consolelog(data)
+    console.log(data)
     
 }
 
@@ -104,7 +104,7 @@ if (signupButton) {
 
         const sign = await signUpUser()
 
-        //consolelog(sign)
+        console.log(sign)
        
         if (!sign) {
             e.target.innerHTML = "Sign Up"
@@ -145,7 +145,7 @@ const verifyEmail = async () => {
     
     const code = firstBox.value+secondBox.value+thirdBox.value+fourthBox.value
 
-    //consolelog(code)
+    console.log(code)
 
     verifyButton.innerHTML = "verifying.."
 
@@ -164,7 +164,7 @@ const verifyEmail = async () => {
 
     const data = await response.json()
 
-    //consolelog(data)
+    console.log(data)
 
     verifyButton.innerHTML = "Verify"
     
@@ -202,7 +202,7 @@ const verifyEmail = async () => {
 if (emailVerificationSection) {
     
     firstBox.addEventListener("keyup", (e) => {
-        //consolelog(firstBox.value)
+        console.log(firstBox.value)
 
         if (e.key === "Backspace" || e.code === "Backspace") {
 
@@ -329,7 +329,7 @@ if (emailVerificationSection) {
 
         if (fourthBox.value !== "") {
             
-            //consolelog("Last Number")
+            console.log("Last Number")
             verifyEmail()
         }
     })
@@ -338,11 +338,11 @@ if (emailVerificationSection) {
     
     //     const pastedData = e.clipboardData.getData("text")
 
-    //     //consolelog(pastedData)
+    //     console.log(pastedData)
 
     //     if (isNaN(pastedData)) {
             
-    //         // //consolelog("NNobe ")
+    //         // console.log("NNobe ")
     //         fourthBox.value = ""
     //         verificationError.innerHTML = "Enter a Valid Number"
     //         verificationError.style.color = "red"
@@ -351,7 +351,7 @@ if (emailVerificationSection) {
     //     if (pastedData.length > 1) {
             
     //         const numbers = pastedData.split("")
-    //         //consolelog(numbers)
+    //         console.log(numbers)
     //         firstBox.value = numbers[0]
     //         secondBox.value = numbers[1]
     //         thirdBox.value = numbers[2]
@@ -396,7 +396,7 @@ const loginUser = async () => {
 
     const data = await response.json()
 
-    //consolelog(data)
+    console.log(data)
 
     if (data.message === "Please Verify Email") {
         localStorage.setItem("email", data.email)
@@ -460,7 +460,7 @@ const sendPasswordResetToken = async () => {
 
     const data = await response.json()
 
-    //consolelog(data)
+    console.log(data)
 
     if (!data.status) {
         
@@ -504,7 +504,7 @@ const verifyTwoFactorAuth = async () => {
     
     const code = firstBox2.value+secondBox2.value+thirdBox2.value+fourthBox2.value
 
-    //consolelog(code)
+    console.log(code)
 
     verifyTwoFactor.innerHTML = "verifying.."
 
@@ -523,7 +523,7 @@ const verifyTwoFactorAuth = async () => {
 
     const data = await response.json()
 
-    //consolelog(data)
+    console.log(data)
 
     verifyTwoFactor.innerHTML = "Verify"
     
@@ -561,7 +561,7 @@ const verifyTwoFactorAuth = async () => {
 if (verifyTwoFactor) {
     
     firstBox2.addEventListener("keyup", (e) => {
-        //consolelog(firstBox2.value)
+        console.log(firstBox2.value)
 
         if (e.key === "Backspace" || e.code === "Backspace") {
 
@@ -688,7 +688,7 @@ if (verifyTwoFactor) {
 
         if (fourthBox2.value !== "") {
             
-            //consolelog("Last Number")
+            console.log("Last Number")
             verifyTwoFactorAuth()
         }
     })

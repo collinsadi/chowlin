@@ -102,7 +102,7 @@ const response = await fetch(url + "/order/get/user", {
 
     
 
-    //consolelog(data)
+    console.log(data)
 }
 
 

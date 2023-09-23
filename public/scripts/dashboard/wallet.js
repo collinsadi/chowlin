@@ -135,7 +135,7 @@ const fundWallet = async () => {
             amount:amount.value
         })
     })
-    //consolelog(cookie)
+    console.log(cookie)
 
     const data = await response.json()
 
@@ -166,4 +166,4 @@ if (continueButton) {
 }
 
 
-// //consolelog(cookie)
+// console.log(cookie)

@@ -65,7 +65,7 @@ const getUserTransactions = async () => {
 
     }
 
- //consolelog(data)
+ console.log(data)
 
 
 }
