@@ -23,8 +23,6 @@ const getVendor = async ()=>{
     })
 
     const data = await response.json()
-    console.log(data)
-
 
     if(data.status){
         vendorImage.src = data.vendor.businessImage.url
@@ -75,6 +73,8 @@ getVendor()
 
 const addToCart = async (button) => {
 
+   
+
     if (!cookie) {
         showModal()
         return
@@ -85,6 +85,9 @@ const addToCart = async (button) => {
     const id = button.dataset.foodid
 
     console.log(id)
+
+    button.disabled = true
+    button.innerHTML = "Adding.."
     
     const response = await fetch(url + "/cart/new", {
         method: "POST",
@@ -98,11 +101,17 @@ const addToCart = async (button) => {
     const data = await response.json()
 
     if (data.status) {
+        showSuccessToss(data.message)
         getUserCart()
+        button.disabled = false
+        button.innerHTML = "Add More"
+    } else {
+        
+        showErrorToss(data.message)
+        button.disabled = false
+        button.innerHTML = "Add to Pack"
     }
 
-
-    console.log(data)
 
 }
 

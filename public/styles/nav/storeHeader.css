@@ -549,7 +549,74 @@ header{
 
 
 
+.cart-checkout{
 
+    width: 100%;
+}
+
+.cart-checkout-inner{
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.location{
+
+    width: 100%;
+    margin-top: 10px;
+}
+
+.location select{
+
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.location p{
+
+    margin-bottom: 5px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.transaction-pin{
+
+    width: 100%;
+}
+
+.transaction-pin p{
+
+    margin-bottom: 5px;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+.transaction-pin{
+
+    margin-top: 10px;
+}
+
+.transaction-pin input{
+    width: 100%;
+    padding: 10px;
+    border: 0;
+    outline: 0;
+    border: 1px solid var(--primary-color);
+    font-size: 18px;
+}
+
+
+.check-description{
+
+    width: 100%;
+    margin-top: 15px;
+}
+
+.check-description p{
+
+    font-family: 'Courier New', Courier, monospace;
+}
 
 
 

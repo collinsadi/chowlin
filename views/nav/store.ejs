@@ -7,6 +7,8 @@
     <%- include("../partials/universal/styles.ejs") %>
     <link rel="stylesheet" href="styles/nav/storeHeader.css">
     <link rel="stylesheet" href="styles/nav/store.css">
+    <link rel="stylesheet" href="/styles/alert/alert.css">
+
 </head>
 <body>
     <%- include("../partials/headers/storeHeader.ejs") %>
@@ -54,11 +56,15 @@
           
         </div>
 
+    <%- include("../partials/alert/alert.ejs") %>
+
+
     </section>
 
 
 
     <%- include("../partials/universal/scripts.ejs") %>
+    <script src="/scripts/alert/alert.js"></script>
     <script src="scripts/nav/storeHeader.js"></script>
     <script src="scripts/nav/store.js"></script>
     <script src="scripts/nav/userAuth.js"></script>
