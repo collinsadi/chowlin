@@ -137,6 +137,18 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.new-here p:first-child{
+
+    margin-bottom: 10px;
+}
+
+.new-here span{
+
+    color: var(--primary-color);
+    font-weight: bold;
+    cursor: pointer;
+}
+
 
 .student{
 

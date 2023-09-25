@@ -41,6 +41,10 @@ router.get("/user/dashboard/settings",checkLogin, (request, response) => {
     response.render("user/settings")
 })
 
+router.get("/auth/user/password/reset/:token", (request, response) => {
+    
+    response.render("user/passwordReset")
+})
 
 
 module.exports = router

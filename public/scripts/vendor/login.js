@@ -132,3 +132,38 @@ verifyEmail.addEventListener("click", async () => {
  await verifyUserEmail()
 
 })
+
+
+
+// !Password Reset Section
+
+const passwordResetButton = document.getElementById("password_reset_button")
+
+passwordResetButton.addEventListener("click", async () => {
+
+    passwordResetButton.disabled = true
+    passwordResetButton.innerHTML = "Hold on.."
+    
+    const response = await fetch(url + "/vendor/password/forgotten", {
+        method: "POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify({email:email.value})
+    })
+
+    const data = await response.json()
+
+    if (!data.status) {
+
+        showErrorToss(data.message)
+        passwordResetButton.disabled = false
+        passwordResetButton.innerHTML = "Reset Password!"
+        
+    } else {
+        passwordResetButton.innerHTML = "Reset Code Sent!"
+        showSuccessToss(data.message)
+    }
+
+    
+})

@@ -64,6 +64,10 @@ router.get("/vendor/dashboard/orders",checkLogin, (request, response) => {
     
 //     response.render("vendor/orders")
 // })
+router.get("/auth/vendor/password/reset/:token", (request, response) => {
+    
+    response.render("vendor/passwordReset")
+})
 
 
 module.exports = router
