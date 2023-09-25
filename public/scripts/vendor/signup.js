@@ -208,6 +208,17 @@ const verifyUserEmail = async () => {
     const days = rememberLogin.checked ? 30 : 1
 
     console.log(days)
+    // setCookie("vend", "data.vendor.token", days)
+
+    // const data = {
+    //     status: true,
+    //     message: "Sucess",
+    //     vendor:{
+    //         token:"Demo Token"
+    //     }
+    // }
+
+    // return
 
     const email = localStorage.getItem("email")
 
@@ -230,20 +241,20 @@ const verifyUserEmail = async () => {
     const data = await response.json()
 
 
+
     if(!data.status){
 
         showErrorToss(data.message)
         verifyEmail.innerHTML = "Try Again"
         verifyEmail.disabled = false
-
-    } else {
+        return
+    } 
+    
+    
+    if(data.status){
         showSuccessToss(data.message)
         localStorage.clear()
-        
-        
-
-
-            setCookie("vend", data.vendor.token, days)
+        setCookie("vend", data.vendor.token, days)  
 
             setTimeout(() => {
             location.href = "/vendor/dashboard"
