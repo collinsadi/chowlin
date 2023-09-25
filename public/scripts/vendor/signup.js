@@ -207,22 +207,9 @@ const verifyUserEmail = async () => {
 
     const days = rememberLogin.checked ? 30 : 1
 
-    console.log(days)
-    // setCookie("vend", "data.vendor.token", days)
-
-    // const data = {
-    //     status: true,
-    //     message: "Sucess",
-    //     vendor:{
-    //         token:"Demo Token"
-    //     }
-    // }
-
-    // return
 
     const email = localStorage.getItem("email")
 
-    // console.log(email)
 
     verifyEmail.innerHTML = "Hold on.."
     verifyEmail.disabled = true
@@ -259,7 +246,7 @@ const verifyUserEmail = async () => {
             setTimeout(() => {
             location.href = "/vendor/dashboard"
                 
-            }, 3000);
+            }, 2000);
 
             
             
