@@ -6,6 +6,7 @@
     <title>Vendor Sign Up</title>
     <%- include("../partials/universal/styles.ejs") %>
     <link rel="stylesheet" href="/styles/vendor/login.css">
+    <link rel="stylesheet" href="/styles/alert/alert.css">
 
 </head>
 <body>
@@ -209,6 +210,58 @@
 
 
             </div>
+            <div id="finalStep" class="login-form">
+
+                <div class="step">
+
+                    <p>Step 3: Email Verification</p>
+                    <!-- <p>An Error Occured</p> -->
+
+                </div>
+
+                <div class="form-group">
+
+           
+
+                    <div class="form-cont">
+
+                        <div class="input-icon">
+                        <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <input id="email_code" autocomplete="off" placeholder="6 Digit Code" name="otp" type="number">
+                    </div>
+
+                </div>
+             
+                <div class="student">
+                    <input id="keeplogged" type="checkbox">
+                    <p>Remember Device </p>
+                </div>
+
+
+
+                <div class="form-group">
+                    <button id="verify-step">Verify</button>
+                </div>
+
+               
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+         
 
 
 
@@ -234,11 +287,14 @@
 
         <div class="login-right"> </div>
 
+    <%- include("../partials/alert/alert.ejs") %>
+
 
     </div>
 
 
     <%- include("../partials/universal/scripts.ejs") %>
+    <script src="/scripts/alert/alert.js"></script>
     <script src="/scripts/vendor/signup.js"></script>
 </body>
 </html>

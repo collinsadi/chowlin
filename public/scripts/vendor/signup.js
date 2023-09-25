@@ -14,7 +14,9 @@ const nextStep = document.getElementById("next-step")
 
 const alertError = (message) => {
 
-    alert(message)
+    // alert(message)
+
+    showErrorToss(message)
     
 }
 
@@ -82,6 +84,7 @@ if (backButton) {
 }
 
 const finalStep = document.getElementById("final-step")
+const emailStep = document.getElementById("finalStep")
 
 const phoneNumber = document.getElementById("phone_number")
 const businessName = document.getElementById("businessName")
@@ -108,9 +111,54 @@ if (businessImage) {
     })
 }
 
+
+const signUser = async () => {
+    
+    finalStep.innerHTML = "Hold on.."
+    finalStep.disabled = true
+
+    const response = await fetch(url + "/vendor/signup", {
+        method: "POST",
+        headers: {
+            "Content-Type":"application/json"
+        },
+        body: JSON.stringify({
+            firstName: firstName.value,
+            lastName: lastName.value,
+            email: email.value,
+            password: password.value,
+            student: true,
+            mobileNumber: phoneNumber.value,
+            businessName: businessName.value,
+            businessImage:imageUrl
+        })
+    })
+    
+    const data = await response.json()
+
+    if (!data.status) {
+        
+        showErrorToss(data.message)
+        finalStep.innerHTML = "Try Again"
+        finalStep.disabled = false
+    } else {
+        showSuccessToss(data.message)
+        localStorage.setItem("email",data.email)
+    
+
+        setTimeout(() => {
+            seconSection.style.display = "none"
+            emailStep.style.display  = "block"
+            
+        }, 1000);
+    }
+
+}
+
+
 if (finalStep) {
     
-    finalStep.addEventListener("click", () => {
+    finalStep.addEventListener("click", async () => {
         
         if (phoneNumber.value === "") {
             
@@ -120,7 +168,7 @@ if (finalStep) {
         
         if(phoneNumber.value.length < 11){
 
-            alert("Enter a Valid Phone Number")
+            alertError("Enter a Valid Phone Number")
             return
         }
 
@@ -143,7 +191,77 @@ if (finalStep) {
         }
 
 
-        alertError("KUDOS: You Passed All The Test")
+       await signUser()
 
     })
 }
+
+
+// Email Verification Section
+
+const verifyEmail = document.getElementById("verify-step")
+const verificationCode = document.getElementById("email_code")
+const rememberLogin = document.getElementById("keeplogged")
+
+const verifyUserEmail = async () => {
+
+    const days = rememberLogin.checked ? 30 : 1
+
+    console.log(days)
+
+    const email = localStorage.getItem("email")
+
+    // console.log(email)
+
+    verifyEmail.innerHTML = "Hold on.."
+    verifyEmail.disabled = true
+    
+    const response = await fetch(url + "/vendor/signup/verify", {
+        method: "POST",
+        headers: {
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify({
+            email,
+            code:verificationCode.value
+        })
+    })
+
+    const data = await response.json()
+
+
+    if(!data.status){
+
+        showErrorToss(data.message)
+        verifyEmail.innerHTML = "Try Again"
+        verifyEmail.disabled = false
+
+    } else {
+        showSuccessToss(data.message)
+        localStorage.clear()
+        
+        
+
+
+            setCookie("vend", data.vendor.token, days)
+
+            setTimeout(() => {
+            location.href = "/vendor/dashboard"
+                
+            }, 3000);
+
+            
+            
+        
+
+    }
+
+}
+
+
+
+verifyEmail.addEventListener("click", async () => {
+    
+ await verifyUserEmail()
+
+})

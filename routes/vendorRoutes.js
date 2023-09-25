@@ -7,7 +7,7 @@ const router = express.Router()
 
 const checkLogin = (request, response,next)=>{
 
-    const jwt = request.cookies.jwt
+    const jwt = request.cookies.vend
 
     if (!jwt) {
         

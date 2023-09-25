@@ -171,6 +171,16 @@
     display: none;
 }
 
+/* #first_step{
+
+    display: none;
+} */
+
+#finalStep{
+
+    display: none;
+}
+
 
 
 @media all and (max-width: 1250px) {
