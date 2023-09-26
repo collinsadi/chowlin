@@ -36,8 +36,8 @@ const getCookie = (cookieName) => {
 
 // const cookie = document.cookie.split("=")[1]
 const cookie = getCookie("jwt")
-// const url = "https://chowlinapi.onrender.com"
-const url = "http://localhost:5000"
+const url = "https://chowlinapi.onrender.com"
+// const url = "http://localhost:5000"
 
 const vendorCookie = getCookie("vend")
 
