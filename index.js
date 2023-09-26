@@ -30,3 +30,9 @@ app.use(cookieParser())
 app.use(navRoutes)
 app.use(userRoutes)
 app.use(vendorRutes)
+
+app.get('/user/logout', (req, res) => {
+  
+  res.clearCookie('jwt').redirect('/store')
+
+})
