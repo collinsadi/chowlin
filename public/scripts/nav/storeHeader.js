@@ -362,7 +362,10 @@ const checkout = () => {
 
         const checkOutButton = document.getElementById("finallyCheck")
 
-        checkOutButton.addEventListener("click", async () => {
+    checkOutButton.addEventListener("click", async (e) => {
+            
+        checkOutButton.innerHTML = "Hold on.."
+        checkOutButton.disabled = true
             
         const response = await fetch(url + "/order/new", {
         method: "POST",
@@ -378,6 +381,8 @@ const checkout = () => {
             if (!data.status) {
                 
                 showErrorToss(data.message)
+                checkOutButton.innerHTML = "Checkout"
+                checkOutButton.disabled = false
             } else {
                 
                 showSuccessToss(data.message)

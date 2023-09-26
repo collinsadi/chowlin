@@ -7,6 +7,7 @@
     <%- include("../partials/dashboard/styles.ejs") %>
     <%- include("../partials/universal/styles.ejs") %>
     <link rel="stylesheet" href="/styles/dashboard/orders.css">
+    <link rel="stylesheet" href="/styles/alert/alert.css">
    
 </head>
 <body>
@@ -159,7 +160,7 @@
                     <h3>Track Order</h3>
                 </div> -->
 
-                <div class="tracker-container">
+                <div id="" class="tracker-container">
 
                     <div class="tracker-left">
 
@@ -170,27 +171,28 @@
 
                     </div>
 
-                    <div class="tracker-right">
+                    <div id="trackstatus" class="tracker-right">
 
-                        <div  class="status-div passed">
+                        <div id="firstStep" class="status-div">
                             <i class="fa-solid fa-circle-check"></i>
                             <p>Ordered</p>
                         </div>
+                         <!-- passed-line -->
 
-                        <div class="straightline passed-line"></div>
-                        <div class="status-div passed">
+                        <div id="firstLine" class="straightline"></div>
+                        <div id="secondStep" class="status-div">
                             <i class="fa-solid fa-circle-check"></i>
                             <p>Packing</p>
                         </div>
 
-                        <div class="straightline"></div>
-                        <div class="status-div">
+                        <div id="secondLine" class="straightline"></div>
+                        <div id="thirdStep" class="status-div">
                             <i class="fa-solid fa-circle-check"></i>
                             <p>Out</p>
                         </div>
 
-                        <div class="straightline"></div>
-                        <div class="status-div">
+                        <div id="thirdLine" class="straightline"></div>
+                        <div id="lastSep" class="status-div">
                             <i class="fa-solid fa-circle-check"></i>
                             <p>Delivered</p>
                         </div>
@@ -287,6 +289,8 @@
 
         </div>
 
+    <%- include("../partials/alert/alert.ejs") %>
+
 
     </main>
 
@@ -295,6 +299,7 @@
 
 
     <%- include("../partials/dashboard/scripts.ejs") %>
+    <script src="/scripts/alert/alert.js"></script>
     <script src="/scripts/dashboard/orders.js"></script>
 </body>
 </html>
