@@ -58,6 +58,80 @@ const foodPrice = document.getElementById("foodPrice")
 const foodErrorTracker = document.getElementById("fooderrorTracker")
 const addFoodButton = document.getElementById("continue_toadd_food")
 
+
+const menuItemsContainer = document.getElementById("menu_items")
+
+
+
+const vendorMenu = async () => {
+     const response = await fetch(url + "/food/get/vendor/logged", {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "authorization":`Bearer ${vendorCookie}`
+        }
+    })
+
+
+    const data = await response.json()
+
+        if(data.status){
+
+            if(data.menu.length > 0){
+
+        menuItemsContainer.innerHTML = data.menu.map(food => {
+
+            return `
+            
+            <div class="single-food">
+
+
+                        <div class="food-image">
+
+                            <img src="${food.foodImage}" alt="">
+
+                        </div>
+                        <div class="food-bottom">
+
+                            <h3>${food.foodName}</h3>
+                            <p>${food.foodDescription}</p>
+                            <span>${food.foodPrice}</span>
+
+                            <div class="edit-button">
+
+                                <button><i class="fa-solid fa-pen-to-square"></i></button>
+                                <button><i class="fa-solid fa-trash"></i></button>
+
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+            
+            
+            
+            `
+        
+        }).join("")
+
+
+            }
+
+        
+
+
+        }
+
+    
+
+    console.log(data)
+}
+
+
+vendorMenu();
+
 addFoodButton.addEventListener("click", async () => {
 
     addFoodButton.innerHTML = "Hold on.."
@@ -90,13 +164,15 @@ addFoodButton.addEventListener("click", async () => {
     }
 
     if (data.status) {
-        
         foodErrorTracker.innerHTML = data.message
         foodErrorTracker.style.color = "green"
+        newFoodModal.style.display = "none"
+        vendorMenu();
+
 
         return
     }
 
-    console.log(data)
+
 
 })

@@ -46,7 +46,7 @@ router.get("/auth/user/password/reset/:token", (request, response) => {
     response.render("user/passwordReset")
 })
 
-router.get("/user/orders/invoice/:orderid", (request, response) => {
+router.get("/user/orders/invoice/:orderid",checkLogin, (request, response) => {
     
     response.render("user/invoice")
 })

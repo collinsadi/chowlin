@@ -124,11 +124,11 @@
     cursor: pointer;
 }
 
-.transaction-buttons button:last-child{
+/* .transaction-buttons button:last-child{
 
     background-color: red;
 
-}
+} */
 
 
 .fund-popup{

@@ -18,14 +18,6 @@ router.get("/about", (request, response) => {
     
     response.render("nav/about")
 })
-router.get("/auth/login", (request, response) => {
-    
-    response.render("auth/login")
-})
-router.get("/auth/signup", (request, response) => {
-    
-    response.render("auth/signup")
-})
 
 
 

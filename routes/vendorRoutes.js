@@ -60,6 +60,14 @@ router.get("/vendor/dashboard/orders",checkLogin, (request, response) => {
     
     response.render("vendor/orders")
 })
+router.get("/vendor/dashboard/wallet",checkLogin, (request, response) => {
+    
+    response.render("vendor/wallet")
+})
+router.get("/vendor/dashboard/settings",checkLogin, (request, response) => {
+    
+    response.render("vendor/settings")
+})
 // router.get("/vendor/dashboard/me.php",checkLogin, (request, response) => {
     
 //     response.render("vendor/orders")
@@ -69,5 +77,9 @@ router.get("/auth/vendor/password/reset/:token", (request, response) => {
     response.render("vendor/passwordReset")
 })
 
+router.get("/vendor/orders/invoice/:orderid",checkLogin, (request, response) => {
+    
+    response.render("vendor/invoice")
+})
 
 module.exports = router

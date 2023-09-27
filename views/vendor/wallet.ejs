@@ -7,12 +7,12 @@
     <%- include("../partials/dashboard/styles.ejs") %>
     <%- include("../partials/universal/styles.ejs") %>
     <link rel="stylesheet" href="/styles/dashboard/wallet.css">
-    <link rel="stylesheet" href="/styles/dashboard/funded.css">
+
    
 </head>
 <body>
    
-    <div class="side-bar">
+  <div class="side-bar">
 
         <div class="side-bar-inner">
 
@@ -26,41 +26,36 @@
 
                 <div class="side-bar-buttons-inner">
 
-                    <div class="single-side-bar-button ">
+                    <div class="single-side-bar-button">
                         <i class="fa-solid fa-table-columns"></i>
-                        <a href="/user/dashboard"><button>Dashboard</button></a>
+                        <a href="/vendor/dashboard"><button>Dashboard</button></a>
+                    </div>
+                    <div class="single-side-bar-button">
+                        <i class="fa-solid fa-bowl-food"></i>
+                        <a href="/vendor/menu"><button>Menu</button></a>
                     </div>
 
                     <div class="single-side-bar-button">
                         <i class="fa-solid fa-cart-flatbed"></i>
-                        <a href="/user/dashboard/orders"><button>Orders</button></a>
+                        <a href="/vendor/dashboard/orders"><button>Orders</button></a>
                     </div>
                     
-                    <div class="single-side-bar-button ">
+                    <div class="single-side-bar-button">
                         <i class="fa-solid fa-credit-card"></i>
-                        <a href="/user/dashboard/payments"><button>Transactions</button></a>
+                        <a href="/vendor/dashboard/payments"><button>Transactions</button></a>
                     </div>
                     
-                    <div class="single-side-bar-button active-button">
+                    <div class="single-side-bar-button   active-button">
                         <i class="fa-solid fa-wallet"></i>
-                        <a href="/user/dashboard/wallet"><button>Wallet</button></a>
+                        <a href="/vendor/dashboard/wallet"><button>Wallet</button></a>
                     </div>
 
 
                     <div class="single-side-bar-button">
                         <i class="fa-solid fa-sliders"></i>
-                        <a href="/user/dashboard/settings"><button>Settings</button></a>
+                        <a href="/vendor/dashboard/settings"><button>Settings</button></a>
                     </div>
 
-
-                    
-                    <br><br>
-
-
-                    <div class="single-side-bar-button">
-                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                        <a href="/user/logout"><button>Logout</button></a>
-                    </div>
 
 
 
@@ -87,12 +82,12 @@
 
         <div class="mobile-side-bar-inner">
 
-            <div class="mobile-side-bar-button ">
+            <div class="mobile-side-bar-button">
 
                 <div class="button-icon">
 
-                    <a href="/user/dashboard">
-                    <button><i class="fa-solid fa-table-columns"></i><span style="margin-left: 10px;display: none;">Dashboard</span></button></a>
+                    <a href="/vendor/dashboard">
+                    <button><i class="fa-solid fa-table-columns"></i></button></a>
                 
 
                 </div>
@@ -102,8 +97,30 @@
 
                 <div class="button-icon">
 
-                    <a href="/user/dashboard/orders">
-                    <button><i class="fa-solid fa-cart-flatbed"></i><span style="margin-left: 10px;display: none;">Orders</span></button></a>
+                    <a href="/vendor/menu">
+                    <button><i class="fa-solid fa-bowl-food"></i></button></a>
+                
+
+                </div>
+
+            </div>
+            <div class="mobile-side-bar-button">
+
+                <div class="button-icon">
+
+                    <a href="/vendor/dashboard/orders">
+                    <button><i class="fa-solid fa-cart-flatbed"></i></button></a>
+                
+
+                </div>
+
+            </div>
+            <div class="mobile-side-bar-button   active-mobile ">
+
+                <div class="button-icon">
+
+                    <a href="/vendor/dashboard/payments">
+                    <button><i class="fa-solid fa-credit-card"></i></button></a>
                 
 
                 </div>
@@ -113,19 +130,8 @@
 
                 <div class="button-icon">
 
-                    <a href="/user/dashboard/payments">
-                    <button><i class="fa-solid fa-credit-card"></i><span style="margin-left: 10px;display: none;">Payments</span></button></a>
-                
-
-                </div>
-
-            </div>
-            <div class="mobile-side-bar-button active-mobile ">
-
-                <div class="button-icon">
-
-                    <a href="/user/dashboard/wallet">
-                    <button><i class="fa-solid fa-wallet"></i><span style="margin-left: 10px;display: none;">Wallet</span></button></a>
+                    <a href="/vendor/dashboard/wallet">
+                    <button><i class="fa-solid fa-wallet"></i></button></a>
                 
 
                 </div>
@@ -135,8 +141,8 @@
 
                 <div class="button-icon ">
 
-                    <a href="/user/dashboard/settings">
-                    <button><i class="fa-solid fa-sliders"></i><span style="margin-left: 10px;display: none;">Settings</span></button></a>
+                    <a href="/vendor/dashboard/settings">
+                    <button><i class="fa-solid fa-sliders"></i></button></a>
                 
 
                 </div>
@@ -149,7 +155,6 @@
 
 
  <!-- mobile Sidebar Ends Here -->
-
 
 
     <main class="main-page">
@@ -220,7 +225,7 @@
 
                 <div class="transaction-buttons">
 
-                    <button id="add-money">Add Money</button>
+                    <button id="add-money">Withdraw Funds</button>
                     <!-- <button>Freeze Wallet</button> -->
 
                 </div>
@@ -307,11 +312,10 @@
 
   
 
-    <%- include("./funded.ejs") %>
+
 
 
     <%- include("../partials/dashboard/scripts.ejs") %>
-    <script src="/scripts/dashboard/wallet.js"></script>
-    <script src="/scripts/dashboard/funded.js"></script>
+    <script src="/scripts/vendor/wallet.js"></script>
 </body>
 </html>

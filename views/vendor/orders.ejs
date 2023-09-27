@@ -7,6 +7,8 @@
     <%- include("../partials/dashboard/styles.ejs") %>
     <%- include("../partials/universal/styles.ejs") %>
     <link rel="stylesheet" href="/styles/dashboard/orders.css">
+    <link rel="stylesheet" href="/styles/alert/alert.css">
+
    
 </head>
 <body>
@@ -227,7 +229,7 @@
 
             <div id="open-orders-container" class="orders-array">      
 
-            <div class="single-order">
+            <!-- <div class="single-order">
 
 
                 <div class="order-id">
@@ -240,13 +242,13 @@
 
                 <p>Date: August 27, 2023</p>
                 <p>Total: 20,000</p>
-                <!-- <p>PHOENIX RESTAURANT</p> -->
+          
                 <button style="background-color: red;">Cancel</button>
                 <button>Packing</button>
                 <button>Details</button>
 
 
-            </div>
+            </div> -->
            
             
 
@@ -261,7 +263,7 @@
 
         <div id="closed-orders-container" class="orders-array">      
 
-            <div class="single-order">
+            <!-- <div class="single-order">
 
 
                 <div class="order-id">
@@ -278,7 +280,7 @@
 
 
             </div>
-        
+         -->
             
 
 
@@ -303,6 +305,8 @@
 
         </div>
 
+    <%- include("../partials/alert/alert.ejs") %>
+
 
     </main>
 
@@ -312,6 +316,8 @@
 
     <%- include("../partials/dashboard/scripts.ejs") %>
     <script src="/scripts/vendor/universal.js"></script>
+    <script src="/scripts/alert/alert.js"></script>
+    <script src="/scripts/vendor/orders.js"></script>
 
 </body>
 </html>

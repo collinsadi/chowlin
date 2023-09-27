@@ -199,9 +199,28 @@
     display: none;
 }
 
+#payment-settings{
 
+    display: none;
+}
 
+#banks{
 
+    width: 45%;
+    padding: 15px;
+    outline: 0;
+    border: 2px solid var(--primary-color);
+}
+
+#account_password{
+
+    display: none;
+}
+
+#account_name{
+
+    display: none;
+}
 
 @media all and (max-width: 516px) {
     /* your content here */
@@ -217,5 +236,10 @@
     width: 100%;
 }
 
+#banks{
+
+    width: 100%;
+    margin-top: 10px;
+}
 
 }

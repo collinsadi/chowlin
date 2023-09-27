@@ -1,5 +1,7 @@
 // alert(url)
 
+const pageIn = location.href.split("/")[3]
+console.log(pageIn)
 
 
 const mobileButtons = document.querySelectorAll(".mobile-side-bar-button")
@@ -43,6 +45,11 @@ const panicStatus = document.getElementById("p_mode")
 
 
 const getUser = async ()=>{
+
+    if (pageIn !== "user") {
+        
+        return
+    }
     
 const response = await fetch(url + "/users/get/one", {
         method: "POST",

@@ -36,3 +36,9 @@ app.get('/user/logout', (req, res) => {
   res.clearCookie('jwt').redirect('/store')
 
 })
+
+app.use((request, response)=>{
+
+  response.status(404).render("nav/404")
+
+})

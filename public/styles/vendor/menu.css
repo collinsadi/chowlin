@@ -180,6 +180,12 @@
     align-items: center;
     flex-direction: column;
     padding: 15px;
+    max-height: 100%;
+    overflow-y: scroll;
+}
+
+.food-modal-inner::-webkit-scrollbar{
+    display: none;
 }
 
 .food-modal-title{
@@ -296,7 +302,7 @@
     }
     .food-modal-inner{
 
-        padding-bottom: 30px;
+        padding-bottom: 100px;
     }
 }
 
