@@ -147,16 +147,18 @@ if(editPersonalDetails){
         editPersonalDetails.disabled = true
         editPersonalDetails.innerHTML = "Hold on .."
 
-    const response = await fetch(url + "/user/settings/personal", {
+    const response = await fetch(url + "/vendor/account/edit", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "authorization":`Bearer ${cookie}`
+                "authorization":`Bearer ${vendorCookie}`
             },
             body: JSON.stringify({
-                firstName:firstNameInput.value,
-                lastName: lastName.value,
-                phoneNumber:phoneNumber.value
+                firstName:vendorFirstName.value,
+                lastName: vendorLastName.value,
+                mobileNumber: phoneNumber.value,
+                businessName: vendorBusinessName.value,
+                businessImage:businessImageUrl
             })
         })
 
@@ -185,6 +187,29 @@ if(editPersonalDetails){
     })
 }
 
+const fr = new FileReader()
+
+const uploadBusinessImage = document.getElementById("businessImage")
+
+uploadBusinessImage.addEventListener("change", () => {
+    
+    fr.readAsDataURL(uploadBusinessImage.files[0])
+
+    fr.addEventListener("load", () => {
+        businessImageUrl = fr.result
+        vendorBusinessImage.src = businessImageUrl
+        console.log(businessImageUrl)
+    })
+
+})
+
+
+
+
+
+
+
+
 const oldPassword = document.getElementById("old_password")
 const newPassword = document.getElementById("new_password")
 const confirmPassword = document.getElementById("c_password")
@@ -210,11 +235,11 @@ if (editSecurity) {
             return 
         }
         
-         const response = await fetch(url + "/user/settings/security", {
+         const response = await fetch(url + "/vendor/settings/security", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "authorization":`Bearer ${cookie}`
+                "authorization":`Bearer ${vendorCookie}`
             },
             body: JSON.stringify({
                 oldPassword:oldPassword.value,
@@ -308,15 +333,15 @@ if (editWallet) {
         editWallet.disabled = true
         editWallet.innerHTML = "Hold on .."
 
-        const response = await fetch(url + "/user/settings/security/paymentpin", {
+        const response = await fetch(url + "/vendor/settings/security/paymentpin", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "authorization":`Bearer ${cookie}`
+                "authorization":`Bearer ${vendorCookie}`
             },
             body: JSON.stringify({
                 password: passwordForPin.value,
-                newpin:transactionPin.value
+                pin:transactionPin.value
             })
         })
 
@@ -327,8 +352,7 @@ if (editWallet) {
             walletError.innerHTML = data.message
             walletError.style.color = "red"
 
-            passwordForPin.value = ""
-            transactionPin.value = ""
+       
 
         editWallet.disabled = false
         editWallet.innerHTML = "Try Again"
@@ -338,6 +362,8 @@ if (editWallet) {
 
             walletError.style.color = "green"
             walletError.innerHTML = data.message
+                passwordForPin.value = ""
+            transactionPin.value = ""
 
         editWallet.disabled = false
         editWallet.innerHTML = "Save"
@@ -366,15 +392,15 @@ if (editPanicBalance) {
         editPanicBalance.disabled = true
         editPanicBalance.innerHTML = "Hold on.."
 
-        const response = await fetch(url + "/user/settings/security/panic", {
+        const response = await fetch(url + "/vendor/settings/security/panic", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "authorization":`Bearer ${cookie}`
+                "authorization":`Bearer ${vendorCookie}`
             },
             body: JSON.stringify({
-                panicBallance: panicBallance.value,
-                panicStatus: panicStatus.checked
+                amount: panicBallance.value,
+                status: panicStatus.checked
             })
         })
 

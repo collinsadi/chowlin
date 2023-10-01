@@ -1,5 +1,5 @@
 
-if (!cookie) {
+// if (!cookie && !vendorCookie) {
     
-    window.location.href = "/store"
-}
+//     window.location.href = "/store"
+// }

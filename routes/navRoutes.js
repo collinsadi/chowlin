@@ -18,6 +18,10 @@ router.get("/about", (request, response) => {
     
     response.render("nav/about")
 })
+router.get("/docs", (request, response) => {
+    
+    response.render("nav/docs")
+})
 
 
 

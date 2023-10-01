@@ -34,7 +34,7 @@
                         <a href="/vendor/menu"><button>Menu</button></a>
                     </div>
 
-                    <div class="single-side-bar-button  active-button">
+                    <div class="single-side-bar-button">
                         <i class="fa-solid fa-cart-flatbed"></i>
                         <a href="/vendor/dashboard/orders"><button>Orders</button></a>
                     </div>
@@ -50,7 +50,7 @@
                     </div>
 
 
-                    <div class="single-side-bar-button">
+                    <div class="single-side-bar-button  active-button">
                         <i class="fa-solid fa-sliders"></i>
                         <a href="/vendor/dashboard/settings"><button>Settings</button></a>
                     </div>
@@ -103,7 +103,7 @@
                 </div>
 
             </div>
-            <div class="mobile-side-bar-button  active-mobile ">
+            <div class="mobile-side-bar-button">
 
                 <div class="button-icon">
 
@@ -136,7 +136,7 @@
                 </div>
 
             </div>
-            <div class="mobile-side-bar-button">
+            <div class="mobile-side-bar-button   active-mobile ">
 
                 <div class="button-icon ">
 
@@ -204,10 +204,22 @@
                         </div>
                         
                         <div class="input-group">
+                            <input placeholder="Business Name" type="text"  id="business_name">
 
                             <input placeholder="Phone Number" type="number"  id="phone_number">
 
                         </div>
+
+                        <div class="business-image-container">
+
+                            <img id="business_image" src="" alt="">
+
+                           
+                        </div>
+                         <label class="upload" for="businessImage">Change Business Image</label>
+
+                        <input style="display: none;" type="file" id="businessImage">
+
 
 
 
@@ -281,7 +293,7 @@
 
 
 
-                   
+<!--                    
                         <div class="check-box-option">
 
                             <p>2 Factor Auth.</p>
@@ -294,7 +306,7 @@
 
                         </div>
 
-                       
+                        -->
 
                       
                         <div class="update-button">
@@ -302,7 +314,7 @@
                         </div>
 
                         <div class="update-button">
-                            <a href="/user/logout"><button id="save_security">Log Out</button></a>
+                            <a href="/vendor/logout"><button id="save_security">Log Out</button></a>
                         </div>
 
                     </div> 

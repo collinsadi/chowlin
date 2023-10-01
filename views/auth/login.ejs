@@ -3,9 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cloudinary-core/2.12.0/cloudinary-core-shrinkwrap.js"></script>
+
     <title>Login</title>
 </head>
 <body>
+
+    <input type="file" id="file">
+
+
+
+    <script>
+
+
+        document.addEventListener("DOMContentLoaded", function() {
+
+        cloudinary.config({
+            cloud_name: 'dnz4clv0s',
+            api_key: '693332714889773',
+            api_secret: 'J-FKXzj48878kWuEVs67UIafxBY'
+        });
+
+
+        })
+    
+ 
+        const button = document.getElementById("file")
+
+        button.addEventListener("change",()=>{
+
+           // Upload an image to Cloudinary
+cloudinary.uploader.upload(button.files[0], function(result) {
+    // Get the public URL of the uploaded image
+    var imageUrl = result.secure_url;
+
+   console.log(result)
+   console.log(imageUrl)
+});
+
+
+
+        })
+
+    </script>
     
 </body>
 </html>
