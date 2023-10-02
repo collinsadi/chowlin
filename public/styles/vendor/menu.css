@@ -163,11 +163,16 @@
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     top: 0;
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     
+}
+
+#add-food-modal{
+
+    display: none;
 }
 
 
@@ -277,7 +282,11 @@
 }
 
 
+#edit_food_modal{
 
+display:none;
+
+}
 
 
 

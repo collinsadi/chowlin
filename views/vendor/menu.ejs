@@ -282,7 +282,55 @@
 
 
             </div>
+            
+            <div id="edit_food_modal" class="add-food-modal">
 
+                
+                <div class="food-modal-inner">
+
+                    <div class="food-modal-title">
+                        <h3>Edit Food</h3>
+                    </div> 
+                    
+                    <div class="selected-image">
+                            <img id="food_toedit_image" src="/images/food.png" alt="">
+                            <p id="food_toedit_error"></p>
+                    </div>
+
+                    <div class="food-form-container">
+
+                        <div class="upload-image">
+                            <label for="food_toedit_image_upload"> <i class="fa-solid fa-upload"></i> Change Image</label>
+                            <input style="display: none;" name="foodimage" id="food_toedit_image_upload" type="file">
+                        </div>
+
+                        <div class="input-case">
+                            <input id="food_toedit_name" type="text" placeholder="Food Name">
+                        </div>
+                        <div class="input-case">
+                            <textarea id="food_toedit_image_desc" placeholder="Brief Description"></textarea>
+                        </div>
+                        <div class="input-case">
+                            <input id="food_toedit_price" type="number" placeholder="Food Price">
+                        </div>
+                       
+
+
+                    </div>
+
+
+                    <div class="food-form-action-buttons">
+
+                        <button id="cancel_food_edit">cancel</button>
+                        <button id="continue_toedit_food">Edit Food</button>
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
 
         </div>
 

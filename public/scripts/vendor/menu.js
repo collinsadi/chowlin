@@ -99,7 +99,7 @@ const vendorMenu = async () => {
 
                             <div class="edit-button">
 
-                                <button><i class="fa-solid fa-pen-to-square"></i></button>
+                                <button onclick="showFoodEditModal(this)" data-foodid="${food._id}"><i class="fa-solid fa-pen-to-square"></i></button>
                                 <button><i class="fa-solid fa-trash"></i></button>
 
                             </div>
@@ -176,3 +176,118 @@ addFoodButton.addEventListener("click", async () => {
 
 
 })
+
+
+const editFoodModal = document.getElementById("edit_food_modal")
+
+const foodToEditImage = document.getElementById("food_toedit_image")
+const foodToEditName = document.getElementById("food_toedit_name")
+const foodToEditDesc = document.getElementById("food_toedit_image_desc")
+const foodToEditPrice = document.getElementById("food_toedit_price")
+let newFoodImage = ""
+const uploadNewFoodImage = document.getElementById("food_toedit_image_upload")
+const closeEditFoodModal = document.getElementById("cancel_food_edit")
+const editFoodError = document.getElementById("food_toedit_error")
+
+
+const editFoodButton = document.getElementById("continue_toedit_food")
+
+closeEditFoodModal.addEventListener("click", () => {
+    
+    editFoodModal.style.display = "none"
+
+})
+
+window.addEventListener("click", (e) => {
+    if (e.target === editFoodModal) {
+        
+        editFoodModal.style.display = "none"
+    }
+})
+
+const showFoodEditModal = (button) => {
+
+    const firstParent = button.parentElement;
+    const parent = firstParent.parentElement;
+    const mainParent = parent.parentElement;
+
+    const foodImage = mainParent.querySelector("img").src;
+    const foodName = parent.querySelector("h3").innerHTML;
+    const foodDescription = parent.querySelector("p").innerHTML;
+    const foodPrice = parent.querySelector("span").innerHTML;
+    newFoodImage = foodImage
+    editFoodModal.style.display = "flex";
+    editFoodError.innerHTML = ""
+    foodToEditName.value = foodName;
+    foodToEditDesc.value = foodDescription;
+    foodToEditImage.src = newFoodImage;
+    foodToEditPrice.value = foodPrice;
+
+    editFoodButton.setAttribute("data-foodid", button.dataset.foodid)
+    editFoodButton.setAttribute("onclick","editFoodFunction(this)")
+    
+
+
+}
+
+uploadNewFoodImage.addEventListener("change", () => {
+    
+    const fr = new FileReader()
+
+    fr.readAsDataURL(uploadNewFoodImage.files[0])
+    fr.addEventListener("load", () => {
+        newFoodImage = fr.result;
+        foodToEditImage.src = newFoodImage
+    })
+
+})
+
+
+const editFoodFunction = async (button) => {
+
+    const id = button.dataset.foodid
+    button.disabled = true
+    button.innerHTML = "Hold on.."
+
+    const response = await fetch(url + "/food/edit?food=" + id, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "authorization": `Bearer ${vendorCookie}`
+        },
+        body: JSON.stringify({
+            foodName: foodToEditName.value,
+            foodDescription: foodToEditDesc.value,
+            foodPrice: foodToEditPrice.value,
+            foodImage: newFoodImage
+            
+        })
+    })
+
+    const data = await response.json()
+
+    if (!data.status) {
+
+        button.disabled = false
+        button.innerHTML = "Edit Food"
+        
+        editFoodError.innerHTML = data.message
+        editFoodError.style.color = "red"
+
+    }
+    
+    
+    if(data.status){
+   
+        editFoodError.innerHTML = data.message
+        editFoodError.style.color = "green"
+        button.disabled = false
+        button.innerHTML = "Edit Food"
+        editFoodModal.style.display = "none"
+
+        vendorMenu()
+
+    }
+    
+   
+}
