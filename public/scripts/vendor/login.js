@@ -1,7 +1,7 @@
 const email = document.getElementById("email")
 const password = document.getElementById("password")
 const rememberLogin = document.getElementById("keeplogged")
-const days = rememberLogin.checked ? 30 : 1
+const days = 30
 const emailSection = document.getElementById("finalStep")
 const loginSection = document.getElementById("loginsect")
 const loginButton = document.getElementById("log_user_in")

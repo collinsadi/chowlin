@@ -290,12 +290,67 @@ display:none;
 
 
 
+.delete-food-modal{
+
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        background-color: rgba(255, 255, 255, 0.39);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+}
 
 
+.delete-food-modal-inner{
 
+    width: 500px;
+    max-width: 95%;
+    background-color: white;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+}
+.delete-food-modal-inner p{
 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 
+.delete-buttons{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.delete-buttons button{
+
+    padding: 10px;
+    font-size: 18px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.delete-buttons button:last-child{
+
+    background-color: red;
+    color: white;
+
+}
+
+#delete_food{
+
+    display: none;
+}
 
 
 @media all and (max-width: 516px) {
@@ -313,6 +368,16 @@ display:none;
 
         padding-bottom: 100px;
     }
+
+    
+        .delete-food-modal-inner{
+
+            position: fixed;
+            bottom: 0;
+            padding-bottom: 150px;
+            width: 100%;
+            max-width: 100%;
+        }
 }
 
 @media all and (max-width: 414px){

@@ -64,6 +64,10 @@ router.get("/vendor/dashboard/wallet",checkLogin, (request, response) => {
     
     response.render("vendor/wallet")
 })
+router.get("/vendor/dashboard/payments",checkLogin, (request, response) => {
+    
+    response.render("vendor/payments")
+})
 router.get("/vendor/dashboard/settings",checkLogin, (request, response) => {
     
     response.render("vendor/settings")

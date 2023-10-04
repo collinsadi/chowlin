@@ -123,23 +123,23 @@ const fundWallet = async () => {
     continueButton.disabled = true
     continueButton.style.opacity = 5
 
-    const response = await fetch(url + "/users/account/fund", {
+    const response = await fetch(url + "/vendor/withdrawal/request", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "authorization":`Bearer ${cookie}`
+            "authorization":`Bearer ${vendorCookie}`
         },
         body: JSON.stringify({
             amount:amount.value
         })
     })
-    console.log(cookie)
+
 
     const data = await response.json()
 
     if (!data.status) {
         
-        errorTracker.innerHTML = data.message
+    errorTracker.innerHTML = data.message
 
     continueButton.innerHTML = "Try Again"
     continueButton.disabled = false
@@ -148,8 +148,12 @@ const fundWallet = async () => {
 
     if (data.status) {
         
-        
-       location.href = data.paymentUrl
+        errorTracker.innerHTML = data.message
+        errorTracker.style.color = "green"
+        fundWalletPopup.style.display = "none" 
+        continueButton.innerHTML = "Try Again"
+        continueButton.disabled = false
+      
     }
 
 }

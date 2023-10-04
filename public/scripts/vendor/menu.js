@@ -100,7 +100,7 @@ const vendorMenu = async () => {
                             <div class="edit-button">
 
                                 <button onclick="showFoodEditModal(this)" data-foodid="${food._id}"><i class="fa-solid fa-pen-to-square"></i></button>
-                                <button><i class="fa-solid fa-trash"></i></button>
+                                <button  onclick="showDeleteFoodModal(this)" data-foodid="${food._id}" ><i class="fa-solid fa-trash"></i></button>
 
                             </div>
 
@@ -290,4 +290,62 @@ const editFoodFunction = async (button) => {
     }
     
    
+}
+
+const deleteFoodModal = document.getElementById("delete_food")
+const deleteFoodButton = document.getElementById("continue_todelete_food")
+const cancelFoodDelete = document.getElementById("cancel_delete")
+
+const showDeleteFoodModal = async (button) => {
+    const id = button.dataset.foodid
+
+    deleteFoodModal.style.display = "flex"
+    deleteFoodButton.setAttribute("data-foodid", id)
+    deleteFoodButton.setAttribute("onclick","deleteFood(this)")
+    
+}
+
+if (cancelFoodDelete) {
+    
+    cancelFoodDelete.addEventListener("click", () => {
+        deleteFoodModal.style.display = "none"
+    })
+}
+
+window.addEventListener("click", (e) => {
+    if (e.target === deleteFoodModal) {
+        
+        deleteFoodModal.style.display = "none"
+    }
+})
+
+
+const deleteFood = async (button)=>{
+
+    const id = button.dataset.foodid
+
+    button.disabled = true;
+    button.innerHTML = "Hold On.."
+
+    const response = await fetch(url+"/food/delete?food="+id,{
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "authorization": `Bearer ${vendorCookie}`
+        }
+    })
+
+    const data = await response.json()
+
+    if (!data.status) {
+        button.disabled = false;
+        button.innerHTML = "Try Again"
+    } else {
+        
+        button.disabled = false
+        button.innerHTML = "Delete Food"
+        deleteFoodModal.style.display = "none"
+        vendorMenu()
+    }
+
 }

@@ -6,12 +6,10 @@
     <title>Order Food On Campus From Your Favorite Vendors || Dashboard</title>
     <%- include("../partials/dashboard/styles.ejs") %>
     <%- include("../partials/universal/styles.ejs") %>
-    <link rel="stylesheet" href="/styles/dashboard/wallet.css">
-
+    <link rel="stylesheet" href="/styles/dashboard/payments.css">
    
 </head>
 <body>
-   
   <div class="side-bar">
 
         <div class="side-bar-inner">
@@ -30,7 +28,7 @@
                         <i class="fa-solid fa-table-columns"></i>
                         <a href="/vendor/dashboard"><button>Dashboard</button></a>
                     </div>
-                    <div class="single-side-bar-button">
+                    <div class="single-side-bar-button ">
                         <i class="fa-solid fa-bowl-food"></i>
                         <a href="/vendor/menu"><button>Menu</button></a>
                     </div>
@@ -40,12 +38,12 @@
                         <a href="/vendor/dashboard/orders"><button>Orders</button></a>
                     </div>
                     
-                    <div class="single-side-bar-button">
+                    <div class="single-side-bar-button  active-button">
                         <i class="fa-solid fa-credit-card"></i>
                         <a href="/vendor/dashboard/payments"><button>Transactions</button></a>
                     </div>
                     
-                    <div class="single-side-bar-button   active-button">
+                    <div class="single-side-bar-button">
                         <i class="fa-solid fa-wallet"></i>
                         <a href="/vendor/dashboard/wallet"><button>Wallet</button></a>
                     </div>
@@ -115,7 +113,7 @@
                 </div>
 
             </div>
-            <div class="mobile-side-bar-button   active-mobile ">
+            <div class="mobile-side-bar-button    active-mobile ">
 
                 <div class="button-icon">
 
@@ -157,11 +155,12 @@
  <!-- mobile Sidebar Ends Here -->
 
 
+
     <main class="main-page">
 
         <div class="main-page-header">
 
-            <h3>Wallet</h3>
+            <h3>Transactions</h3>
 
         </div>
 
@@ -170,65 +169,118 @@
 
             
 
-        <div class="virtual-card-container">
 
+        <!-- <div class="dashboard-banner">
 
-                <div class="card-title">
+            <div class="banner-inner">
 
-                    <h3>Virtual Card</h3>
+                <h1>Available for Advertisement</h1>
 
-
-                </div>
-
-                <div class="single-virtual-card">
-
-                    <div class="card-top">
-
-                        <h3 id="wallet-holder"></h3>
-                        <h3>CHOWLIN</h3>
-
-                    </div>
-
-                    <div class="card-number">
-
-                       <h3>4635 <span>7464 </span>     <span>9320</span>  9018</h3>
-
-
-                    </div>
-
-                    <div class="card-footer">
-
-                    <div class="ballance">
-
-                        <p>₦</p><input id="main_ballance" type="password" value="00000" disabled>
-
-                        <div id="toggleBallance" class="toggle-ballance">
-                            <div id="eye_btn" class="fa-solid fa-eye"></d>
-                        </div>
-
-                    </div>
-
-                    <div class="footer-right">
-
-                                    
-
-                    </div>
-
-                    </div>
-
-                
-
-
-                </div>
-           
             </div>
 
-                <div class="transaction-buttons">
 
-                    <button id="add-money">Withdraw Funds</button>
-                    <!-- <button>Freeze Wallet</button> -->
+
+        </div> -->
+
+
+
+        <div id="transactions-array" class="transactions-array">
+
+            <!-- <div class="single-transaction">
+
+                <div class="transaction-icon credit">
+
+                    <i class="fa-solid fa-arrow-up"></i>
 
                 </div>
+
+                <div class="transaction-details">
+
+                 <p>August 20,2023 </p>
+
+                <p>Order Reversal Funds for Cancelled Order ,Order Id #45678 </p>
+
+                <h3 style="margin-top: 10px;">₦ 25,000</h3>
+
+
+                <p>Phoenix Restaurant</p>
+
+                </div>
+
+               
+
+            
+
+
+            </div>
+            <div class="single-transaction">
+
+                <div class="transaction-icon debit">
+
+                    <i class="fa-solid fa-arrow-down"></i>
+
+                </div>
+
+                <div class="transaction-details">
+
+            <p>August 20,2023 </p>
+
+                <p>Order Reversal Funds for Cancelled Order ,Order Id #45678 </p>
+
+                <h3 style="margin-top: 10px;">- ₦ 25,000</h3>
+                    
+                <p>Phoenix Restaurant</p>
+                
+
+                </div>
+
+               
+
+          
+
+
+            </div>
+            <div class="single-transaction">
+
+                <div class="transaction-icon failed">
+
+                    <i class="fa-solid fa-arrow-down"></i>
+
+                </div>
+
+                <div class="transaction-details">
+
+            <p>August 20,2023 </p>
+
+                <p>Order Reversal Funds for Cancelled Order ,Order Id #45678 </p>
+
+                <h3 style="margin-top: 10px;">- ₦ 25,000</h3>
+
+                <p>Phoenix Restaurant</p>
+
+                </div>
+
+               
+
+
+
+            </div> -->
+           
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
         </div>
 
@@ -236,86 +288,10 @@
     </main>
 
 
-    <!-- Fund Wallet Pop up -->
-
-
-    <div id="fund-popup" class="fund-popup">
-
-        <div class="fund-popup-inner">
-
-
-            <div class="input-container">
-
-                <div class="input-icon">
-
-
-                    <i class="fa-solid fa-naira-sign"></i>
-
-                </div>
-
-                <input id="fund-amount" placeholder="0.00" type="number">
-
-            </div>
-
-            <div class="instruction">
-                <p id="error-tracker"></p>
-            </div>
-
-            <div class="fund-button">
-
-                <button id="continue-funding">Continue</button>
-                <button id="abort-funding">Abort</button>
-
-            </div>
-
-
-        </div>
-
-
-    </div>
-
-
-    <div id="balance-popup"   class="fund-popup">
-
-        <div class="fund-popup-inner">
-
-
-            <div class="input-container">
-
-                <div class="input-icon">
-
-
-                    <i class="fa-solid fa-lock"></i>
-
-                </div>
-
-                <input  id="transaction-pin" placeholder="Pin" type="number">
-
-            </div>
-
-            <div class="instruction">
-                <p id="ballance-error-tracker"></p>
-            </div>
-
-            <div class="fund-button">
-
-                <button id="continue-balance">Continue</button>
-                <button id="abort-balance">Abort</button>
-
-            </div>
-
-
-        </div>
-
-
-    </div>
-
-  
-
 
 
 
     <%- include("../partials/dashboard/scripts.ejs") %>
-    <script src="/scripts/vendor/wallet.js"></script>
+    <script src="/scripts/vendor/transactions.js"></script>
 </body>
 </html>
