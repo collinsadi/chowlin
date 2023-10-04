@@ -3,9 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Chowlin</title>
+    <%- include("../partials/universal/styles.ejs") %>
+    <link rel="stylesheet" href="/styles/nav/home.css">
+
 </head>
 <body>
+
+    <header>
+
+        <div class="header-inner">
+
+            <div class="header-left">
+
+                <h3>Chowlin</h3>
+
+            </div>
+
+            <div class="header-right">
+
+                <a href="/store">Store</a>
+                <a href="/vendor/signup">Vendor</a>
+                <a href="/docs">Docs</a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <section class="hero-section">
+
+        <div class="hero-section-inner">
+
+            <div class="hero-section-left">
+
+                <div class="top-text">
+
+                    <div class="top-text-left">
+                        <h2>FAST</h2>
+                    </div>
+                    <div class="top-text-right">
+                        <p>Food</p>
+                        <p>Delivery</p>
+                    </div>
+
+                </div>
+
+                <div class="description-text">
+                    <p>Buy Your Favorite Meal from your Favorite Vendors on Campus</p>
+                    <p>Sell Your best Meal to Students all from one Dashboard</p>
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="/store"><button class="buy">Order Now</button></a>
+                    <a href="/vendor/signup"><button>Start Selling</button></a>
+                </div>
+
+            </div>
+
+
+            <div class="hero-section-right">
+
+                <img src="/images/hero.png" alt="">
+
+            </div>
+
+        </div>
+
+    </section>
+
+
     
 </body>
 </html>

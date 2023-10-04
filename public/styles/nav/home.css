@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+
+body{
+
+    background-color: #F6EFE6;
+}
+
+header{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.header-inner{
+
+    width: 98%;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.header-left h3{
+
+    font-size: 30px;
+font-family: 'Poppins', sans-serif;
+}
+
+.header-right a{
+
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 10px;
+
+}
+
+.hero-section{
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+.hero-section-inner{
+
+    width: 98%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-section-right, .hero-section-left{
+
+    width: 45%;
+}
+
+.hero-section-right img{
+
+    max-width: 100%;
+}
+
+.top-text{
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.top-text-left h2{
+
+    font-size: 80px;
+    color: var(--primary-color);
+    font-family: 'Poppins', sans-serif;
+}
+
+.top-text-right p{
+
+    font-size: 30px;
+    font-weight: bold;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+margin-bottom: 0;
+margin-top: 0;
+
+}
+
+.description-text{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.hero-buttons{
+
+    margin-top: 20px;
+}
+
+.hero-buttons button{
+
+    padding: 10px;
+    background-color: transparent;
+    color: black;
+    border: 0;
+    outline: 0;
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+button.buy{
+
+background-color: #2F2F2F;
+color: white;
+
+}
+
+
+
+@media all and (max-width: 931px) {
+    /* your content here */
+
+    .header-inner{
+
+        flex-direction: column;
+    }
+    .hero-section-inner{
+
+        flex-direction: column-reverse;
+    }
+    .hero-section-left, .hero-section-right{
+
+        width: 100%;
+    }
+    .hero-section-left{
+        padding-bottom: 20px;
+    }
+
+    .hero-section-right{
+
+        margin-top: 15px;
+    }
+}
