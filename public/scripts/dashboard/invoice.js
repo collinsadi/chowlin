@@ -63,7 +63,7 @@ const getInvoice = async () => {
         description.innerHTML = data.order.orderDetails
     }
 
-    console.log(data)
+  
 
 }
 

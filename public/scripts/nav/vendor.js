@@ -84,7 +84,7 @@ const addToCart = async (button) => {
 
     const id = button.dataset.foodid
 
-    console.log(id)
+    //console.log(id)
 
     button.disabled = true
     button.innerHTML = "Adding.."

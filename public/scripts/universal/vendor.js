@@ -28,7 +28,7 @@ const response = await fetch(url + "/vendor/get/one", {
     
     const data = await response.json()
 
-    console.log(data)
+    //console.log(data)
 
     if (vendorFirstName) {
         

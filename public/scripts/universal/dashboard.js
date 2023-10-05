@@ -1,7 +1,7 @@
 // alert(url)
 
 const pageIn = location.href.split("/")[3]
-console.log(pageIn)
+//console.log(pageIn)
 
 
 const mobileButtons = document.querySelectorAll(".mobile-side-bar-button")

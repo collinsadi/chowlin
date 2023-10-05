@@ -42,7 +42,7 @@ uploadButton.addEventListener("change", () => {
     fr.addEventListener("load", () => {
         
         imageUrl = fr.result
-        console.log(imageUrl)
+        //console.log(imageUrl)
         selectedImage.src = imageUrl
     })
 
@@ -126,7 +126,7 @@ const vendorMenu = async () => {
 
     
 
-    console.log(data)
+    //console.log(data)
 }
 
 

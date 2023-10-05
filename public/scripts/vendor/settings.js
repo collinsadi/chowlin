@@ -129,7 +129,7 @@ const getBanks = async () => {
 
     }
 
-    console.log(data)
+    //console.log(data)
 
 }
 
@@ -182,7 +182,7 @@ if(editPersonalDetails){
         editPersonalDetails.innerHTML = "Save"
         }
 
-        console.log(data)
+        //console.log(data)
 
     })
 }
@@ -198,7 +198,7 @@ uploadBusinessImage.addEventListener("change", () => {
     fr.addEventListener("load", () => {
         businessImageUrl = fr.result
         vendorBusinessImage.src = businessImageUrl
-        console.log(businessImageUrl)
+        //console.log(businessImageUrl)
     })
 
 })
@@ -271,7 +271,7 @@ if (editSecurity) {
         editSecurity.innerHTML = "Save"
         }
 
-        console.log(data)
+        //console.log(data)
 
     })
 }
@@ -440,7 +440,7 @@ if(verifyAccount){
 
     verifyAccount.addEventListener("click", async (e) => {
 
-        // console.log(e.target)
+        // //console.log(e.target)
         const button = e.target
         button.disabled = true
         button.innerHTML = "Hold on.."
@@ -487,7 +487,7 @@ banksArray.addEventListener("change", (e) => {
     verifyAccount.innerHTML = "Verify Details"
     verifyAccount.removeAttribute("onclick")
 
-    console.log(bank)
+    //console.log(bank)
 })
 
 accountNumber.addEventListener("keyup", () => {

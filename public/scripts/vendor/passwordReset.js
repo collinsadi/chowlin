@@ -3,7 +3,7 @@ const confirmPassword = document.getElementById("confirmpassword")
 const resetButton = document.getElementById("reset_password")
 
 const validationCode = location.href.split("/").pop()
-console.log(validationCode)
+//console.log(validationCode)
 
 
 resetButton.addEventListener("click", async () => {

@@ -140,7 +140,7 @@ if(editPersonalDetails){
         editPersonalDetails.innerHTML = "Save"
         }
 
-        console.log(data)
+        
 
     })
 }
@@ -206,7 +206,7 @@ if (editSecurity) {
         editSecurity.innerHTML = "Save"
         }
 
-        console.log(data)
+       
 
     })
 }

@@ -104,7 +104,7 @@ if (businessImage) {
             imageUrl = fr.result
             document.getElementById("imageLabel").innerText = "Image Selected"
 
-            console.log(imageUrl)
+            //console.log(imageUrl)
         })
 
 

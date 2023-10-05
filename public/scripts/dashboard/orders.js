@@ -102,7 +102,7 @@ const response = await fetch(url + "/order/get/user", {
 
     
 
-    console.log(data)
+    
 }
 
 
@@ -129,7 +129,7 @@ const cancelOrder = async (button) => {
 
     const data = await response.json()
 
-    console.log(data)
+   
 
     if(data.status){
 
@@ -260,7 +260,7 @@ const trackOrder = async (button) => {
 
     }
 
-    console.log(data)
+   
    
 
 }

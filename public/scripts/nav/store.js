@@ -67,7 +67,6 @@ const getRestaurants = async () => {
         return
     }
 
-    console.log(data)
 
 }
 
