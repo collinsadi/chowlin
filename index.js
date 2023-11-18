@@ -2,10 +2,21 @@ const express = require("express")
 const app = express()
 const cookieParser = require("cookie-parser")
 const cron = require("node-cron");
+const axios = require("axios");
+const serverUrl = "https://chowlin.onrender.com/"
+const apiUrl = "https://chowlinapi.onrender.com/"
 
+// cron to keep server online (runs every 5 minutes)
 cron.schedule("*/10 * * * *", () => {
-  console.log("Welcome to Chowlin");
+  try {
+    console.log("cron running for server");
+    axios.get(serverUrl);
+    axios.get(apiUrl)
+  } catch (e) {
+    console.log(e.message);
+  }
 });
+
 
 const navRoutes = require("./routes/navRoutes")
 const userRoutes = require("./routes/userRoutes")
